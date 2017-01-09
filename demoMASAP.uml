@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>multi_agent_painting</OriginalElement>
+  <nodes>
+    <node x="6342.081850198421" y="2768.5">multi_agent_painting.physics.laws.Gravity</node>
+    <node x="1632.768754960326" y="6291.5">multi_agent_painting.mas.Scheduler</node>
+    <node x="4747.831850198421" y="2782.0">multi_agent_painting.physics.laws.speedDown</node>
+    <node x="4688.085014880959" y="286.0">multi_agent_painting.physics.PhysicsVector</node>
+    <node x="0.0" y="5652.0">multi_agent_painting.applet.panes.drawingPane.DrawModePanel</node>
+    <node x="6573.064295634923" y="6346.0">multi_agent_painting.applet.panes.ConfigModePanel.ConfigModePane</node>
+    <node x="6932.081850198421" y="2768.5">multi_agent_painting.physics.laws.Radiation</node>
+    <node x="898.2712921627071" y="205.0">multi_agent_painting.mas.sound.FilePlayer</node>
+    <node x="1271.0576339285776" y="14.0">multi_agent_painting.mas.sound.SoundThreadState</node>
+    <node x="502.0" y="7895.0">multi_agent_painting.mas.behaviours.Behaviour</node>
+    <node x="665.8016294642857" y="6157.0">multi_agent_painting.gui.MadButtons</node>
+    <node x="5062.831850198421" y="2809.0">multi_agent_painting.physics.laws.ListenToMusic</node>
+    <node x="0.0" y="7895.0">multi_agent_painting.mas.exceptions.MasException</node>
+    <node x="8249.41834821429" y="5828.0">multi_agent_painting.applet.panes.HelpModePanel</node>
+    <node x="3909.6651835317543" y="2741.5">multi_agent_painting.mas.roles.Role</node>
+    <node x="658.5642956349234" y="6888.0">multi_agent_painting.gui.SoundSourceFrame.ValiderButtonMouseListener</node>
+    <node x="593.0625" y="5003.0">multi_agent_painting.applet.panes.SplashPane.ButtonsPane</node>
+    <node x="7981.7690575396855" y="435.0">multi_agent_painting.mas.exceptions.ImmutableException</node>
+    <node x="1490.5642956349234" y="6888.0">multi_agent_painting.gui.SoundSourceFrame.MicroRadioButtonMouseListener</node>
+    <node x="4218.831850198421" y="2782.0">multi_agent_painting.physics.laws.AgentsDodge</node>
+    <node x="4533.831850198421" y="2809.0">multi_agent_painting.physics.laws.Drag</node>
+    <node x="2331.5266493055647" y="4557.0">multi_agent_painting.mas.agents.Agent</node>
+    <node x="1190.6267956349234" y="868.0">multi_agent_painting.applet.panes.drawingPane.DrawPanel</node>
+    <node x="1551.6267956349234" y="2836.5">multi_agent_painting.mas.exceptions.KernelException</node>
+    <node x="960.5642956349234" y="7268.0">multi_agent_painting.gui.SoundSourceFrame</node>
+    <node x="7230.081850198421" y="1489.0">multi_agent_painting.physics.laws.AgentsInteraction</node>
+    <node x="956.5642956349234" y="6631.0">multi_agent_painting.gui.GUI</node>
+    <node x="8256.91834821429" y="5003.0">multi_agent_painting.applet.panes.HelpModePanel.HelpTextPane</node>
+    <node x="292.27129216270714" y="218.5">multi_agent_painting.mas.sound.LineEntryPlayer</node>
+    <node x="3945.0850148809586" y="1421.5">multi_agent_painting.mas.behaviours.Behaviours</node>
+    <node x="7935.335014880959" y="2782.0">multi_agent_painting.physics.laws.DodgePainter</node>
+    <node x="1330.1020882936596" y="5003.0">multi_agent_painting.applet.panes.InfoModePanel.InfoImagePane</node>
+    <node x="2675.8421254960404" y="435.0">multi_agent_painting.mas.exceptions.AgentRuntimeException</node>
+    <node x="5207.581850198421" y="4584.5">multi_agent_painting.mas.MASConfiguration</node>
+    <node x="4160.835014880959" y="435.0">multi_agent_painting.mas.exceptions.RoleInitException</node>
+    <node x="251.0" y="7895.0">multi_agent_painting.mas.exceptions.AgentConfigurationError</node>
+    <node x="1414.6267956349234" y="2809.5">multi_agent_painting.mas.KernelState</node>
+    <node x="6586.081850198421" y="2755.0">multi_agent_painting.physics.laws.AgentsCollision</node>
+    <node x="415.0625" y="5003.0">multi_agent_painting.applet.panes.SplashPane.SplashImagePane</node>
+    <node x="2958.498516865088" y="1530.0">multi_agent_painting.physics.laws.Friction</node>
+    <node x="154.71428571428623" y="4962.5">multi_agent_painting.applet.panes.drawingPane.DrawModePanel.ControlPane</node>
+    <node x="4591.969057539685" y="5625.0">multi_agent_painting.mas.Mas</node>
+    <node x="1268.8520882936596" y="5828.0">multi_agent_painting.applet.panes.InfoModePanel</node>
+    <node x="8292.66834821429" y="6346.0">multi_agent_painting.applet.panes.HelpModePanel.ButtonsPane</node>
+    <node x="495.6875" y="5828.0">multi_agent_painting.applet.panes.SplashPane</node>
+    <node x="2279.477088293659" y="3907.5">multi_agent_painting.mas.exceptions.AgentInitException</node>
+    <node x="7506.580220734136" y="408.0">multi_agent_painting.physics.laws.PhysicProperty</node>
+    <node x="3560.665183531755" y="2809.0">multi_agent_painting.mas.behaviours.lib.InteractBehaviour</node>
+    <node x="1187.1020882936596" y="5003.0">multi_agent_painting.applet.panes.InfoModePanel.ButtonsPane</node>
+    <node x="1503.1020882936596" y="5733.0">multi_agent_painting.mas.Messenger</node>
+    <node x="1364.4770882936596" y="3421.0">multi_agent_painting.mas.Kernel</node>
+    <node x="496.77129216270714" y="0.0">multi_agent_painting.mas.sound.SoundDecoder</node>
+    <node x="1073.5642956349234" y="7787.0">multi_agent_painting.gui.SoundSourceFrame.Mp3RadioButtonMouseListener</node>
+    <node x="5850.081850198421" y="2836.5">multi_agent_painting.mas.behaviours.SoundPlayer</node>
+    <node x="2718.177088293659" y="1530.0">multi_agent_painting.mas.exceptions.MasInitException</node>
+    <node x="7576.08185019842" y="1340.5">multi_agent_painting.mas.agents.PhysicalForces</node>
+    <node x="1075.6267956349234" y="2741.5">multi_agent_painting.applet.panes.drawingPane.Spinner</node>
+    <node x="654.0" y="7895.0">multi_agent_painting.mas.behaviours.InitAgent</node>
+    <node x="7349.665183531754" y="2768.5">multi_agent_painting.physics.laws.HeavytBody</node>
+    <node x="28.625" y="6305.5">multi_agent_painting.applet.panes.drawingPane.DrawModePanel.ButtonsPane</node>
+    <node x="1033.8016294642857" y="6265.0">multi_agent_painting.gui.GUI.StateManager</node>
+    <node x="2506.477088293659" y="2485.0">multi_agent_painting.physics.Space</node>
+    <node x="6464.647628968257" y="5828.0">multi_agent_painting.applet.panes.ConfigModePanel</node>
+    <node x="7613.001681547626" y="2768.5">multi_agent_painting.physics.laws.HotBody</node>
+    <node x="6430.064295634923" y="6346.0">multi_agent_painting.applet.panes.ConfigModePanel.ButtonsPane</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="multi_agent_painting.gui.GUI" target="multi_agent_painting.gui.SoundSourceFrame">
+      <point x="171.33333333333348" y="288.5" />
+      <point x="1384.8976289682569" y="7228.0" />
+      <point x="1285.8500099206376" y="7228.0" />
+      <point x="72.28571428571422" y="-234.5" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.HelpModePanel.HelpTextPane" target="multi_agent_painting.applet.panes.HelpModePanel">
+      <point x="33.25" y="18.0" />
+      <point x="8356.66834821429" y="5605.0" />
+      <point x="8360.41834821429" y="5605.0" />
+      <point x="37.0" y="-18.0" />
+    </edge>
+    <edge source="multi_agent_painting.gui.GUI.StateManager" target="multi_agent_painting.mas.sound.LineEntryPlayer">
+      <point x="-66.22222222222217" y="-99.0" />
+      <point x="1116.5794072420636" y="6117.0" />
+      <point x="928.0763888888891" y="6117.0" />
+      <point x="928.0763888888891" y="818.0" />
+      <point x="585.2712921627071" y="818.0" />
+      <point x="0.0" y="248.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.physics.laws.Gravity">
+      <point x="287.67857142857156" y="-518.0" />
+      <point x="2099.655659722231" y="3371.0" />
+      <point x="6398.081850198421" y="3371.0" />
+      <point x="-56.0" y="99.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.mas.Scheduler">
+      <point x="-186.45833333333348" y="518.0" />
+      <point x="1625.518754960326" y="4527.0" />
+      <point x="1492.6020882936596" y="4527.0" />
+      <point x="1492.6020882936596" y="6097.0" />
+      <point x="1677.6020882936593" y="6097.0" />
+      <point x="-89.66666666666674" y="-72.5" />
+    </edge>
+    <edge source="multi_agent_painting.gui.GUI.StateManager" target="multi_agent_painting.applet.panes.HelpModePanel">
+      <point x="132.44444444444446" y="-99.0" />
+      <point x="1315.24607390873" y="6137.0" />
+      <point x="8274.085014880959" y="6137.0" />
+      <point x="-49.33333333333303" y="18.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.Space" target="multi_agent_painting.physics.laws.Friction">
+      <point x="266.4000000000001" y="-383.0" />
+      <point x="3105.8770882936597" y="2465.0" />
+      <point x="3085.998516865088" y="2465.0" />
+      <point x="-127.5" y="31.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.mas.MASConfiguration">
+      <point x="48.66666666666697" y="-221.0" />
+      <point x="4896.135724206352" y="5525.0" />
+      <point x="5641.581850198421" y="5525.0" />
+      <point x="0.0" y="436.5" />
+    </edge>
+    <edge source="multi_agent_painting.gui.SoundSourceFrame" target="multi_agent_painting.gui.SoundSourceFrame.ValiderButtonMouseListener">
+      <point x="-216.8571428571429" y="-234.5" />
+      <point x="996.7071527777807" y="7248.0" />
+      <point x="728.0642956349234" y="7248.0" />
+      <point x="-69.5" y="31.5" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.HelpModePanel" target="multi_agent_painting.applet.panes.HelpModePanel.HelpTextPane">
+      <point x="-37.0" y="-18.0" />
+      <point x="8286.41834821429" y="5605.0" />
+      <point x="8290.16834821429" y="5605.0" />
+      <point x="-33.25" y="18.0" />
+    </edge>
+    <edge source="multi_agent_painting.gui.GUI.StateManager" target="multi_agent_painting.applet.panes.InfoModePanel">
+      <point x="0.0" y="-99.0" />
+      <point x="1182.8016294642857" y="6087.0" />
+      <point x="1339.8520882936596" y="6087.0" />
+      <point x="0.0" y="18.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.physics.Space">
+      <point x="-146.0" y="-221.0" />
+      <point x="4701.469057539685" y="5555.0" />
+      <point x="3539.165183531755" y="5555.0" />
+      <point x="3539.165183531755" y="3291.0" />
+      <point x="3116.977088293659" y="3291.0" />
+      <point x="277.5" y="383.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.physics.laws.AgentsCollision">
+      <point x="121.66666666666697" y="-221.0" />
+      <point x="4969.135724206352" y="5555.0" />
+      <point x="6830.581850198421" y="5555.0" />
+      <point x="81.5" y="113.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.agents.Agent" target="multi_agent_painting.mas.Kernel">
+      <point x="-361.16666666666697" y="-464.0" />
+      <point x="2364.3599826388977" y="4527.0" />
+      <point x="1998.4354216269928" y="4527.0" />
+      <point x="186.45833333333326" y="518.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.speedDown" target="multi_agent_painting.physics.laws.AgentsInteraction">
+      <point x="0.0" y="-86.0" />
+      <point x="4895.331850198421" y="2325.0" />
+      <point x="7311.581850198421" y="2325.0" />
+      <point x="-81.5" y="72.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.physics.laws.AgentsDodge">
+      <point x="95.89285714285734" y="-518.0" />
+      <point x="1907.869945436517" y="3341.0" />
+      <point x="4292.581850198421" y="3341.0" />
+      <point x="-73.75" y="86.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.agents.Agent" target="multi_agent_painting.mas.agents.PhysicalForces">
+      <point x="361.1666666666665" y="-464.0" />
+      <point x="3086.693315972231" y="4537.0" />
+      <point x="3500.998516865088" y="4537.0" />
+      <point x="3500.998516865088" y="3401.0" />
+      <point x="7602.501681547626" y="3401.0" />
+      <point x="7602.501681547626" y="2455.0" />
+      <point x="7937.58185019842" y="2455.0" />
+      <point x="120.5" y="221.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.mas.exceptions.MasInitException">
+      <point x="-159.82142857142844" y="-518.0" />
+      <point x="1652.1556597222311" y="3291.0" />
+      <point x="2062.1267956349234" y="3291.0" />
+      <point x="2062.1267956349234" y="2465.0" />
+      <point x="2769.677088293659" y="2465.0" />
+      <point x="-51.5" y="31.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.mas.roles.Role">
+      <point x="31.96428571428578" y="-518.0" />
+      <point x="1843.9413740079453" y="3321.0" />
+      <point x="3945.0401835317543" y="3321.0" />
+      <point x="-106.125" y="126.5" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.SplashPane" target="multi_agent_painting.applet.panes.SplashPane.SplashImagePane">
+      <point x="-43.5" y="-18.0" />
+      <point x="510.1875" y="5605.0" />
+      <point x="454.5625" y="5605.0" />
+      <point x="-39.5" y="18.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.AgentsCollision" target="multi_agent_painting.physics.laws.AgentsInteraction">
+      <point x="-81.5" y="-113.0" />
+      <point x="6667.581850198421" y="2355.0" />
+      <point x="7409.3818501984215" y="2355.0" />
+      <point x="16.300000000000182" y="72.5" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.ListenToMusic" target="multi_agent_painting.mas.agents.PhysicalForces">
+      <point x="59.66666666666697" y="-59.0" />
+      <point x="5211.998516865088" y="2405.0" />
+      <point x="7696.58185019842" y="2405.0" />
+      <point x="-120.5" y="221.0" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.drawingPane.DrawPanel" target="multi_agent_painting.mas.sound.LineEntryPlayer">
+      <point x="-288.75" y="-693.5" />
+      <point x="1479.3767956349234" y="808.0" />
+      <point x="702.471292162707" y="808.0" />
+      <point x="117.20000000000005" y="248.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.mas.exceptions.KernelException">
+      <point x="-287.67857142857156" y="-518.0" />
+      <point x="1524.298516865088" y="3271.0" />
+      <point x="1654.6267956349234" y="3271.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.HeavytBody" target="multi_agent_painting.mas.agents.PhysicalForces">
+      <point x="56.0" y="-99.5" />
+      <point x="7517.665183531754" y="2445.0" />
+      <point x="7889.381850198421" y="2445.0" />
+      <point x="72.30000000000018" y="221.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.mas.behaviours.SoundPlayer">
+      <point x="73.0" y="-221.0" />
+      <point x="4920.469057539685" y="5535.0" />
+      <point x="6086.081850198421" y="5535.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.drawingPane.DrawModePanel" target="multi_agent_painting.mas.sound.LineEntryPlayer">
+      <point x="-191.57142857142844" y="-194.0" />
+      <point x="31.92857142857156" y="5605.0" />
+      <point x="33.33418898810396" y="5605.0" />
+      <point x="33.33418898810396" y="808.0" />
+      <point x="350.87129216270705" y="808.0" />
+      <point x="-234.4000000000001" y="248.0" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.drawingPane.DrawModePanel.ControlPane" target="multi_agent_painting.applet.panes.drawingPane.DrawModePanel">
+      <point x="47.25" y="58.5" />
+      <point x="296.46428571428623" y="5605.0" />
+      <point x="351.2142857142858" y="5605.0" />
+      <point x="127.71428571428578" y="-194.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.Radiation" target="multi_agent_painting.mas.agents.PhysicalForces">
+      <point x="69.25" y="-99.5" />
+      <point x="7139.831850198421" y="2435.0" />
+      <point x="7841.181850198421" y="2435.0" />
+      <point x="24.100000000000364" y="221.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.mas.Kernel">
+      <point x="-243.33333333333303" y="-221.0" />
+      <point x="4604.135724206352" y="5595.0" />
+      <point x="2215.654625496041" y="5595.0" />
+      <point x="2215.654625496041" y="4537.0" />
+      <point x="1923.8520882936596" y="4537.0" />
+      <point x="111.875" y="518.0" />
+    </edge>
+    <edge source="multi_agent_painting.gui.GUI.StateManager" target="multi_agent_painting.mas.Kernel">
+      <point x="33.11111111111131" y="-99.0" />
+      <point x="1215.912740575397" y="6097.0" />
+      <point x="1481.6020882936596" y="6097.0" />
+      <point x="1481.6020882936596" y="4517.0" />
+      <point x="1550.9354216269928" y="4517.0" />
+      <point x="-261.04166666666674" y="518.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.mas.KernelState">
+      <point x="-351.6071428571429" y="-518.0" />
+      <point x="1460.3699454365167" y="3401.0" />
+      <point x="1473.1267956349234" y="3401.0" />
+      <point x="0.0" y="58.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.physics.laws.ListenToMusic">
+      <point x="223.75" y="-518.0" />
+      <point x="2035.7270882936596" y="3361.0" />
+      <point x="5107.581850198421" y="3361.0" />
+      <point x="-44.75" y="59.0" />
+    </edge>
+    <edge source="multi_agent_painting.gui.GUI.StateManager" target="multi_agent_painting.applet.panes.ConfigModePanel">
+      <point x="99.33333333333337" y="-99.0" />
+      <point x="1282.1349627976192" y="6117.0" />
+      <point x="6491.314295634924" y="6117.0" />
+      <point x="-53.33333333333303" y="18.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.Space" target="multi_agent_painting.physics.PhysicsVector">
+      <point x="133.19999999999982" y="-383.0" />
+      <point x="2972.677088293659" y="2465.0" />
+      <point x="2947.998516865088" y="2465.0" />
+      <point x="2947.998516865088" y="828.0" />
+      <point x="4719.7278720238155" y="828.0" />
+      <point x="-189.85714285714266" y="180.5" />
+    </edge>
+    <edge source="multi_agent_painting.gui.GUI" target="multi_agent_painting.gui.GUI.StateManager">
+      <point x="0.0" y="-288.5" />
+      <point x="1213.5642956349234" y="6591.0" />
+      <point x="1108.3016294642857" y="6591.0" />
+      <point x="-74.5" y="99.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.Drag" target="multi_agent_painting.physics.laws.Friction">
+      <point x="0.0" y="-59.0" />
+      <point x="4630.831850198421" y="2285.0" />
+      <point x="3340.998516865088" y="2285.0" />
+      <point x="127.5" y="31.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.physics.laws.Gravity">
+      <point x="97.33333333333303" y="-221.0" />
+      <point x="4944.802390873018" y="5545.0" />
+      <point x="6510.081850198421" y="5545.0" />
+      <point x="56.0" y="99.5" />
+    </edge>
+    <edge source="multi_agent_painting.gui.SoundSourceFrame" target="multi_agent_painting.gui.GUI">
+      <point x="-72.28571428571422" y="-234.5" />
+      <point x="1141.2785813492092" y="7228.0" />
+      <point x="1042.23096230159" y="7228.0" />
+      <point x="-171.33333333333337" y="288.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.sound.FilePlayer" target="multi_agent_painting.mas.sound.SoundThreadState">
+      <point x="202.0" y="-261.5" />
+      <point x="1403.2712921627071" y="185.0" />
+      <point x="1393.3076339285776" y="185.0" />
+      <point x="40.75" y="58.5" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.Gravity" target="multi_agent_painting.mas.agents.PhysicalForces">
+      <point x="56.0" y="-99.5" />
+      <point x="6510.081850198421" y="2415.0" />
+      <point x="7744.78185019842" y="2415.0" />
+      <point x="-72.30000000000018" y="221.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.physics.laws.Radiation">
+      <point x="146.0" y="-221.0" />
+      <point x="4993.469057539685" y="5565.0" />
+      <point x="7139.831850198421" y="5565.0" />
+      <point x="69.25" y="99.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.mas.sound.FilePlayer">
+      <point x="170.33333333333303" y="-221.0" />
+      <point x="5017.802390873018" y="5575.0" />
+      <point x="7219.581850198421" y="5575.0" />
+      <point x="7219.581850198421" y="768.0" />
+      <point x="1443.6712921627072" y="768.0" />
+      <point x="242.4000000000001" y="261.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.physics.laws.HotBody">
+      <point x="219.0" y="-221.0" />
+      <point x="5066.469057539685" y="5595.0" />
+      <point x="7751.501681547626" y="5595.0" />
+      <point x="0.0" y="99.5" />
+    </edge>
+    <edge source="multi_agent_painting.gui.SoundSourceFrame" target="multi_agent_painting.gui.SoundSourceFrame.MicroRadioButtonMouseListener">
+      <point x="144.57142857142856" y="-234.5" />
+      <point x="1358.1357242063518" y="7238.0" />
+      <point x="1560.5642956349234" y="7238.0" />
+      <point x="-70.0" y="31.5" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.drawingPane.DrawPanel" target="multi_agent_painting.mas.Kernel">
+      <point x="0.0" y="693.5" />
+      <point x="1768.1267956349234" y="3281.0" />
+      <point x="1588.2270882936596" y="3281.0" />
+      <point x="-223.75" y="-518.0" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.InfoModePanel.InfoImagePane" target="multi_agent_painting.applet.panes.InfoModePanel">
+      <point x="35.25" y="18.0" />
+      <point x="1435.8520882936596" y="5605.0" />
+      <point x="1393.1020882936596" y="5605.0" />
+      <point x="53.25" y="-18.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.AgentsDodge" target="multi_agent_painting.physics.PhysicsVector">
+      <point x="-98.33333333333348" y="-86.0" />
+      <point x="4267.998516865087" y="2295.0" />
+      <point x="4380.585014880958" y="2295.0" />
+      <point x="4380.585014880958" y="848.0" />
+      <point x="4846.299300595244" y="848.0" />
+      <point x="-63.285714285714675" y="180.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.physics.laws.ListenToMusic">
+      <point x="24.33333333333303" y="-221.0" />
+      <point x="4871.802390873018" y="5515.0" />
+      <point x="5197.081850198421" y="5515.0" />
+      <point x="44.75" y="59.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.Space" target="multi_agent_painting.mas.exceptions.MasInitException">
+      <point x="0.0" y="-383.0" />
+      <point x="2839.477088293659" y="2465.0" />
+      <point x="2872.677088293659" y="2465.0" />
+      <point x="51.5" y="31.5" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.Gravity" target="multi_agent_painting.physics.laws.AgentsInteraction">
+      <point x="-56.0" y="-99.5" />
+      <point x="6398.081850198421" y="2345.0" />
+      <point x="7376.781850198421" y="2345.0" />
+      <point x="-16.300000000000182" y="72.5" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.drawingPane.DrawModePanel" target="multi_agent_painting.mas.Kernel">
+      <point x="191.57142857142844" y="-194.0" />
+      <point x="415.07142857142844" y="5595.0" />
+      <point x="354.21428571428623" y="5595.0" />
+      <point x="354.21428571428623" y="4537.0" />
+      <point x="1476.3520882936596" y="4537.0" />
+      <point x="-335.625" y="518.0" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.ConfigModePanel.ConfigModePane" target="multi_agent_painting.applet.panes.ConfigModePanel">
+      <point x="0.0" y="-18.0" />
+      <point x="6651.064295634923" y="6127.0" />
+      <point x="6597.98096230159" y="6127.0" />
+      <point x="53.33333333333303" y="18.0" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.HelpModePanel.ButtonsPane" target="multi_agent_painting.applet.panes.HelpModePanel">
+      <point x="-30.75" y="-18.0" />
+      <point x="0.0" y="18.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.DodgePainter" target="multi_agent_painting.physics.PhysicsVector">
+      <point x="98.33333333333303" y="-86.0" />
+      <point x="8181.168348214292" y="2455.0" />
+      <point x="8068.58185019842" y="2455.0" />
+      <point x="8068.58185019842" y="748.0" />
+      <point x="5099.442157738102" y="748.0" />
+      <point x="189.85714285714312" y="180.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.agents.Agent" target="multi_agent_painting.physics.PhysicsVector">
+      <point x="229.83333333333348" y="-464.0" />
+      <point x="2955.359982638898" y="4517.0" />
+      <point x="3478.998516865088" y="4517.0" />
+      <point x="3478.998516865088" y="838.0" />
+      <point x="4783.01358630953" y="838.0" />
+      <point x="-126.57142857142844" y="180.5" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.InfoModePanel" target="multi_agent_painting.applet.panes.InfoModePanel.InfoImagePane">
+      <point x="17.75" y="-18.0" />
+      <point x="1357.6020882936596" y="5605.0" />
+      <point x="1365.3520882936596" y="5605.0" />
+      <point x="-35.25" y="18.0" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.drawingPane.DrawModePanel" target="multi_agent_painting.applet.panes.drawingPane.DrawModePanel.ButtonsPane">
+      <point x="55.875" y="194.0" />
+      <point x="279.375" y="6137.0" />
+      <point x="260.2916666666665" y="6137.0" />
+      <point x="92.66666666666652" y="-58.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.behaviours.SoundPlayer" target="multi_agent_painting.mas.behaviours.Behaviours">
+      <point x="0.0" y="-31.5" />
+      <point x="6086.081850198421" y="2275.0" />
+      <point x="4299.251681547625" y="2275.0" />
+      <point x="141.66666666666652" y="140.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.AgentsInteraction" target="multi_agent_painting.physics.laws.PhysicProperty">
+      <point x="0.0" y="-72.5" />
+      <point x="7393.081850198421" y="848.0" />
+      <point x="7575.080220734136" y="848.0" />
+      <point x="0.0" y="58.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.behaviours.Behaviours" target="multi_agent_painting.mas.exceptions.AgentRuntimeException">
+      <point x="-106.25" y="-140.0" />
+      <point x="4051.3350148809586" y="778.0" />
+      <point x="2830.3421254960404" y="778.0" />
+      <point x="51.5" y="31.5" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.HeavytBody" target="multi_agent_painting.physics.laws.AgentsInteraction">
+      <point x="-56.0" y="-99.5" />
+      <point x="7405.665183531754" y="2375.0" />
+      <point x="7474.581850198421" y="2375.0" />
+      <point x="81.5" y="72.5" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.drawingPane.DrawPanel" target="multi_agent_painting.mas.sound.FilePlayer">
+      <point x="288.75" y="-693.5" />
+      <point x="2056.8767956349234" y="798.0" />
+      <point x="1322.471292162707" y="798.0" />
+      <point x="121.20000000000005" y="261.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.behaviours.lib.InteractBehaviour" target="multi_agent_painting.physics.laws.AgentsInteraction">
+      <point x="82.25" y="-59.0" />
+      <point x="3807.415183531755" y="2305.0" />
+      <point x="7246.3818501984215" y="2305.0" />
+      <point x="-146.69999999999982" y="72.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.physics.Space">
+      <point x="-95.89285714285711" y="-518.0" />
+      <point x="1716.0842311508025" y="3301.0" />
+      <point x="2561.977088293659" y="3301.0" />
+      <point x="-277.5" y="383.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.applet.panes.drawingPane.Spinner">
+      <point x="-415.53571428571433" y="-518.0" />
+      <point x="1396.4413740079453" y="3401.0" />
+      <point x="1235.1267956349234" y="3401.0" />
+      <point x="0.0" y="126.5" />
+    </edge>
+    <edge source="multi_agent_painting.gui.SoundSourceFrame.ValiderButtonMouseListener" target="multi_agent_painting.gui.SoundSourceFrame">
+      <point x="69.5" y="31.5" />
+      <point x="867.0642956349234" y="7238.0" />
+      <point x="1068.992867063495" y="7238.0" />
+      <point x="-144.57142857142844" y="-234.5" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.AgentsDodge" target="multi_agent_painting.physics.laws.AgentsInteraction">
+      <point x="0.0" y="-86.0" />
+      <point x="4366.331850198421" y="2315.0" />
+      <point x="7278.981850198421" y="2315.0" />
+      <point x="-114.10000000000036" y="72.5" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.DodgePainter" target="multi_agent_painting.physics.laws.AgentsInteraction">
+      <point x="-98.33333333333303" y="-86.0" />
+      <point x="7984.501681547626" y="2365.0" />
+      <point x="7539.781850198421" y="2365.0" />
+      <point x="146.69999999999982" y="72.5" />
+    </edge>
+    <edge source="multi_agent_painting.gui.GUI" target="multi_agent_painting.mas.Mas">
+      <point x="205.5999999999999" y="-288.5" />
+      <point x="1419.1642956349233" y="6611.0" />
+      <point x="4975.219057539685" y="6611.0" />
+      <point x="127.75" y="221.0" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.SplashPane.SplashImagePane" target="multi_agent_painting.applet.panes.SplashPane">
+      <point x="39.5" y="18.0" />
+      <point x="533.5625" y="5605.0" />
+      <point x="539.1875" y="5605.0" />
+      <point x="-14.5" y="-18.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.mas.agents.Agent">
+      <point x="-194.66666666666652" y="-221.0" />
+      <point x="4652.802390873019" y="5575.0" />
+      <point x="2988.1933159722316" y="5575.0" />
+      <point x="262.66666666666697" y="464.0" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.drawingPane.DrawModePanel" target="multi_agent_painting.mas.sound.FilePlayer">
+      <point x="-127.71428571428578" y="-194.0" />
+      <point x="95.78571428571422" y="5605.0" />
+      <point x="122.21428571428623" y="5605.0" />
+      <point x="122.21428571428623" y="828.0" />
+      <point x="958.871292162707" y="828.0" />
+      <point x="-242.4000000000001" y="261.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.agents.PhysicalForces" target="multi_agent_painting.physics.PhysicsVector">
+      <point x="-120.5" y="-221.0" />
+      <point x="7696.58185019842" y="758.0" />
+      <point x="5036.156443452387" y="758.0" />
+      <point x="126.57142857142844" y="180.5" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.Radiation" target="multi_agent_painting.physics.laws.AgentsInteraction">
+      <point x="-69.25" y="-99.5" />
+      <point x="7001.331850198421" y="2365.0" />
+      <point x="7441.981850198421" y="2365.0" />
+      <point x="48.899999999999636" y="72.5" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.drawingPane.DrawModePanel.ControlPane" target="multi_agent_painting.mas.sound.LineEntryPlayer">
+      <point x="-63.0" y="-58.5" />
+      <point x="186.21428571428623" y="4537.0" />
+      <point x="212.21428571428623" y="4537.0" />
+      <point x="212.21428571428623" y="818.0" />
+      <point x="468.0712921627073" y="818.0" />
+      <point x="-117.19999999999982" y="248.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.physics.laws.speedDown">
+      <point x="159.82142857142867" y="-518.0" />
+      <point x="1971.7985168650882" y="3351.0" />
+      <point x="4821.581850198421" y="3351.0" />
+      <point x="-73.75" y="86.0" />
+    </edge>
+    <edge source="multi_agent_painting.gui.GUI" target="multi_agent_painting.gui.MadButtons">
+      <point x="-102.79999999999995" y="-288.5" />
+      <point x="1110.7642956349237" y="6601.0" />
+      <point x="839.8016294642857" y="6601.0" />
+      <point x="0.0" y="207.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.speedDown" target="multi_agent_painting.mas.agents.PhysicalForces">
+      <point x="98.33333333333303" y="-86.0" />
+      <point x="4993.665183531754" y="2395.0" />
+      <point x="7648.381850198421" y="2395.0" />
+      <point x="-168.69999999999982" y="221.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Messenger" target="multi_agent_painting.mas.agents.Agent">
+      <point x="135.0" y="-113.0" />
+      <point x="1840.6020882936596" y="5605.0" />
+      <point x="2462.859982638898" y="5605.0" />
+      <point x="-262.66666666666674" y="464.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.physics.laws.Radiation">
+      <point x="415.5357142857142" y="-518.0" />
+      <point x="2227.512802579374" y="3391.0" />
+      <point x="7001.331850198421" y="3391.0" />
+      <point x="-69.25" y="99.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.physics.laws.DodgePainter">
+      <point x="243.33333333333303" y="-221.0" />
+      <point x="5090.802390873018" y="5605.0" />
+      <point x="8082.835014880959" y="5605.0" />
+      <point x="0.0" y="86.0" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.drawingPane.DrawModePanel" target="multi_agent_painting.applet.panes.drawingPane.DrawPanel">
+      <point x="0.0" y="-194.0" />
+      <point x="223.5" y="5595.0" />
+      <point x="144.21428571428623" y="5595.0" />
+      <point x="144.21428571428623" y="2465.0" />
+      <point x="1537.1267956349234" y="2465.0" />
+      <point x="-231.0" y="693.5" />
+    </edge>
+    <edge source="multi_agent_painting.gui.SoundSourceFrame.Mp3RadioButtonMouseListener" target="multi_agent_painting.gui.SoundSourceFrame">
+      <point x="-70.0" y="-31.5" />
+      <point x="1143.5642956349234" y="7762.0" />
+      <point x="1087.0642956349234" y="7762.0" />
+      <point x="-126.5" y="234.5" />
+    </edge>
+    <edge source="multi_agent_painting.gui.GUI.StateManager" target="multi_agent_painting.mas.Mas">
+      <point x="66.22222222222217" y="-99.0" />
+      <point x="1249.023851686508" y="6107.0" />
+      <point x="4719.719057539685" y="6107.0" />
+      <point x="-127.75" y="221.0" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.drawingPane.DrawModePanel.ButtonsPane" target="multi_agent_painting.applet.panes.drawingPane.DrawModePanel">
+      <point x="-92.66666666666669" y="-58.5" />
+      <point x="74.95833333333348" y="6137.0" />
+      <point x="55.875" y="6137.0" />
+      <point x="-167.625" y="194.0" />
+    </edge>
+    <edge source="multi_agent_painting.gui.GUI.StateManager" target="multi_agent_painting.mas.sound.FilePlayer">
+      <point x="-33.11111111111131" y="-99.0" />
+      <point x="1149.6905183531744" y="6107.0" />
+      <point x="1048.0642956349234" y="6107.0" />
+      <point x="1048.0642956349234" y="848.0" />
+      <point x="1201.2712921627071" y="848.0" />
+      <point x="0.0" y="261.5" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.drawingPane.DrawPanel" target="multi_agent_painting.physics.Space">
+      <point x="462.0" y="693.5" />
+      <point x="2230.1267956349234" y="2445.0" />
+      <point x="2706.2770882936593" y="2445.0" />
+      <point x="-133.19999999999982" y="-383.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.mas.agents.Agent">
+      <point x="261.0416666666665" y="518.0" />
+      <point x="2073.018754960326" y="4517.0" />
+      <point x="2430.026649305564" y="4517.0" />
+      <point x="-295.5000000000002" y="-464.0" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.SplashPane.ButtonsPane" target="multi_agent_painting.applet.panes.SplashPane">
+      <point x="30.75" y="18.0" />
+      <point x="685.3125" y="5605.0" />
+      <point x="597.1875" y="5605.0" />
+      <point x="43.5" y="-18.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.mas.Messenger">
+      <point x="-111.875" y="518.0" />
+      <point x="1700.1020882936596" y="4537.0" />
+      <point x="1599.1020882936596" y="4537.0" />
+      <point x="1599.1020882936596" y="5605.0" />
+      <point x="1570.6020882936596" y="5605.0" />
+      <point x="-135.0" y="-113.0" />
+    </edge>
+    <edge source="multi_agent_painting.gui.GUI.StateManager" target="multi_agent_painting.applet.panes.drawingPane.DrawModePanel">
+      <point x="-132.44444444444446" y="-99.0" />
+      <point x="1050.3571850198414" y="6137.0" />
+      <point x="391.125" y="6137.0" />
+      <point x="167.625" y="194.0" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.HelpModePanel" target="multi_agent_painting.applet.panes.HelpModePanel.ButtonsPane">
+      <point x="49.33333333333303" y="18.0" />
+      <point x="8372.751681547625" y="6137.0" />
+      <point x="8384.91834821429" y="6137.0" />
+      <point x="30.75" y="-18.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.DodgePainter" target="multi_agent_painting.mas.agents.PhysicalForces">
+      <point x="0.0" y="-86.0" />
+      <point x="8082.835014880959" y="2465.0" />
+      <point x="8033.98185019842" y="2465.0" />
+      <point x="216.89999999999964" y="221.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.mas.behaviours.lib.InteractBehaviour">
+      <point x="-31.96428571428578" y="-518.0" />
+      <point x="1780.0128025793738" y="3311.0" />
+      <point x="3642.915183531755" y="3311.0" />
+      <point x="-82.25" y="59.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.mas.behaviours.lib.InteractBehaviour">
+      <point x="-97.33333333333348" y="-221.0" />
+      <point x="4750.135724206351" y="5535.0" />
+      <point x="3807.415183531755" y="5535.0" />
+      <point x="82.25" y="59.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.AgentsDodge" target="multi_agent_painting.mas.agents.PhysicalForces">
+      <point x="98.33333333333348" y="-86.0" />
+      <point x="4464.665183531754" y="2385.0" />
+      <point x="7600.181850198421" y="2385.0" />
+      <point x="-216.89999999999964" y="221.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.HotBody" target="multi_agent_painting.mas.agents.PhysicalForces">
+      <point x="69.25" y="-99.5" />
+      <point x="7820.751681547626" y="2465.0" />
+      <point x="7985.78185019842" y="2465.0" />
+      <point x="168.69999999999982" y="221.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.behaviours.Behaviours" target="multi_agent_painting.mas.exceptions.RoleInitException">
+      <point x="106.25" y="-140.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.InfoModePanel.ButtonsPane" target="multi_agent_painting.applet.panes.InfoModePanel">
+      <point x="30.75" y="18.0" />
+      <point x="1279.3520882936596" y="5595.0" />
+      <point x="1322.1020882936596" y="5595.0" />
+      <point x="-17.75" y="-18.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.agents.Agent" target="multi_agent_painting.mas.roles.Role">
+      <point x="295.5" y="-464.0" />
+      <point x="3021.0266493055647" y="4527.0" />
+      <point x="3489.998516865088" y="4527.0" />
+      <point x="3489.998516865088" y="3331.0" />
+      <point x="4015.7901835317543" y="3331.0" />
+      <point x="-35.375" y="126.5" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.AgentsCollision" target="multi_agent_painting.mas.agents.PhysicalForces">
+      <point x="81.5" y="-113.0" />
+      <point x="6830.581850198421" y="2425.0" />
+      <point x="7792.98185019842" y="2425.0" />
+      <point x="-24.100000000000364" y="221.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.ListenToMusic" target="multi_agent_painting.physics.PhysicsVector">
+      <point x="-59.66666666666697" y="-59.0" />
+      <point x="5092.665183531754" y="2295.0" />
+      <point x="5205.251681547625" y="2295.0" />
+      <point x="5205.251681547625" y="848.0" />
+      <point x="4972.870729166673" y="848.0" />
+      <point x="63.285714285714675" y="180.5" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.speedDown" target="multi_agent_painting.physics.PhysicsVector">
+      <point x="-98.33333333333303" y="-86.0" />
+      <point x="4796.998516865088" y="2295.0" />
+      <point x="4909.585014880959" y="2295.0" />
+      <point x="0.0" y="180.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.physics.laws.HeavytBody">
+      <point x="194.66666666666697" y="-221.0" />
+      <point x="5042.135724206352" y="5585.0" />
+      <point x="7436.459126984128" y="5585.0" />
+      <point x="7436.459126984128" y="3391.0" />
+      <point x="7461.665183531754" y="3391.0" />
+      <point x="0.0" y="99.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Kernel" target="multi_agent_painting.physics.laws.AgentsCollision">
+      <point x="351.6071428571429" y="-518.0" />
+      <point x="2163.584231150802" y="3381.0" />
+      <point x="6667.581850198421" y="3381.0" />
+      <point x="-81.5" y="113.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.mas.roles.Role">
+      <point x="-48.66666666666697" y="-221.0" />
+      <point x="4798.802390873018" y="5515.0" />
+      <point x="4266.394350198421" y="5515.0" />
+      <point x="4266.394350198421" y="3331.0" />
+      <point x="4157.290183531754" y="3331.0" />
+      <point x="106.125" y="126.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.agents.Agent" target="multi_agent_painting.mas.exceptions.AgentInitException">
+      <point x="-98.5" y="-464.0" />
+      <point x="2627.0266493055647" y="4487.0" />
+      <point x="2382.477088293659" y="4487.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="multi_agent_painting.gui.SoundSourceFrame" target="multi_agent_painting.gui.SoundSourceFrame.Mp3RadioButtonMouseListener">
+      <point x="126.5" y="234.5" />
+      <point x="1340.0642956349234" y="7762.0" />
+      <point x="1283.5642956349234" y="7762.0" />
+      <point x="70.0" y="-31.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.sound.LineEntryPlayer" target="multi_agent_painting.mas.sound.SoundThreadState">
+      <point x="195.33333333333337" y="-248.0" />
+      <point x="780.6046254960406" y="185.0" />
+      <point x="1311.8076339285776" y="185.0" />
+      <point x="-40.75" y="58.5" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.InfoModePanel" target="multi_agent_painting.applet.panes.InfoModePanel.ButtonsPane">
+      <point x="-53.25" y="-18.0" />
+      <point x="1286.6020882936596" y="5605.0" />
+      <point x="1217.8520882936596" y="5605.0" />
+      <point x="-30.75" y="18.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.physics.laws.speedDown">
+      <point x="0.0" y="-221.0" />
+      <point x="4847.469057539685" y="5505.0" />
+      <point x="4969.081850198421" y="5505.0" />
+      <point x="73.75" y="86.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.agents.PhysicalForces" target="multi_agent_painting.mas.exceptions.ImmutableException">
+      <point x="120.5" y="-221.0" />
+      <point x="7937.58185019842" y="848.0" />
+      <point x="8084.7690575396855" y="848.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="multi_agent_painting.gui.GUI" target="multi_agent_painting.applet.panes.SplashPane">
+      <point x="-205.5999999999999" y="-288.5" />
+      <point x="1007.9642956349235" y="6611.0" />
+      <point x="524.6875" y="6611.0" />
+      <point x="-29.0" y="18.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.behaviours.lib.InteractBehaviour" target="multi_agent_painting.mas.behaviours.Behaviours">
+      <point x="-82.25" y="-59.0" />
+      <point x="3642.915183531755" y="2295.0" />
+      <point x="4015.9183482142917" y="2295.0" />
+      <point x="-141.66666666666652" y="140.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.agents.Agent" target="multi_agent_painting.physics.Space">
+      <point x="32.83333333333303" y="-464.0" />
+      <point x="2758.3599826388977" y="4537.0" />
+      <point x="2772.977088293659" y="4537.0" />
+      <point x="2772.977088293659" y="3301.0" />
+      <point x="2672.977088293659" y="3301.0" />
+      <point x="-166.5" y="383.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.ListenToMusic" target="multi_agent_painting.physics.laws.AgentsInteraction">
+      <point x="0.0" y="-59.0" />
+      <point x="5152.331850198421" y="2335.0" />
+      <point x="7344.181850198422" y="2335.0" />
+      <point x="-48.899999999999636" y="72.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.roles.Role" target="multi_agent_painting.mas.behaviours.Behaviours">
+      <point x="0.0" y="-126.5" />
+      <point x="4051.1651835317543" y="2295.0" />
+      <point x="4157.585014880959" y="2295.0" />
+      <point x="0.0" y="140.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.Space" target="multi_agent_painting.mas.agents.Agent">
+      <point x="55.5" y="383.0" />
+      <point x="2894.977088293659" y="3301.0" />
+      <point x="2794.977088293659" y="3301.0" />
+      <point x="2794.977088293659" y="4527.0" />
+      <point x="2889.693315972231" y="4527.0" />
+      <point x="164.16666666666652" y="-464.0" />
+    </edge>
+    <edge source="multi_agent_painting.gui.SoundSourceFrame.MicroRadioButtonMouseListener" target="multi_agent_painting.gui.SoundSourceFrame">
+      <point x="70.0" y="31.5" />
+      <point x="1700.5642956349234" y="7248.0" />
+      <point x="1430.4214384920663" y="7248.0" />
+      <point x="216.8571428571429" y="-234.5" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.drawingPane.DrawModePanel.ControlPane" target="multi_agent_painting.mas.Kernel">
+      <point x="63.0" y="-58.5" />
+      <point x="312.21428571428623" y="4527.0" />
+      <point x="1401.7687549603263" y="4527.0" />
+      <point x="-410.20833333333326" y="518.0" />
+    </edge>
+    <edge source="multi_agent_painting.gui.GUI.StateManager" target="multi_agent_painting.applet.panes.SplashPane">
+      <point x="-99.33333333333337" y="-99.0" />
+      <point x="1083.4682961309522" y="6127.0" />
+      <point x="582.6875" y="6127.0" />
+      <point x="29.0" y="18.0" />
+    </edge>
+    <edge source="multi_agent_painting.mas.sound.LineEntryPlayer" target="multi_agent_painting.mas.sound.SoundDecoder">
+      <point x="-195.33333333333337" y="-248.0" />
+      <point x="389.93795882937366" y="185.0" />
+      <point x="526.2712921627071" y="185.0" />
+      <point x="-88.5" y="72.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.mas.sound.LineEntryPlayer">
+      <point x="-121.66666666666652" y="-221.0" />
+      <point x="4725.802390873019" y="5545.0" />
+      <point x="3550.165183531755" y="5545.0" />
+      <point x="3550.165183531755" y="788.0" />
+      <point x="819.6712921627072" y="788.0" />
+      <point x="234.4000000000001" y="248.0" />
+    </edge>
+    <edge source="multi_agent_painting.gui.GUI.StateManager" target="multi_agent_painting.gui.GUI">
+      <point x="74.5" y="99.0" />
+      <point x="1257.3016294642857" y="6611.0" />
+      <point x="1316.364295634923" y="6611.0" />
+      <point x="102.79999999999973" y="-288.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.agents.Agent" target="multi_agent_painting.mas.exceptions.AgentRuntimeException">
+      <point x="-32.833333333333485" y="-464.0" />
+      <point x="2692.693315972231" y="4477.0" />
+      <point x="2495.977088293659" y="4477.0" />
+      <point x="2495.977088293659" y="848.0" />
+      <point x="2727.3421254960404" y="848.0" />
+      <point x="-51.5" y="31.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Scheduler" target="multi_agent_painting.mas.Messenger">
+      <point x="0.0" y="-72.5" />
+      <point x="1767.268754960326" y="6097.0" />
+      <point x="1705.6020882936596" y="6097.0" />
+      <point x="0.0" y="113.0" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.SplashPane" target="multi_agent_painting.applet.panes.SplashPane.ButtonsPane">
+      <point x="14.5" y="-18.0" />
+      <point x="568.1875" y="5595.0" />
+      <point x="623.8125" y="5595.0" />
+      <point x="-30.75" y="18.0" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.ConfigModePanel.ButtonsPane" target="multi_agent_painting.applet.panes.ConfigModePanel">
+      <point x="0.0" y="-18.0" />
+      <point x="6491.564295634923" y="6127.0" />
+      <point x="6544.647628968257" y="6127.0" />
+      <point x="0.0" y="18.0" />
+    </edge>
+    <edge source="multi_agent_painting.physics.Space" target="multi_agent_painting.applet.panes.drawingPane.DrawPanel">
+      <point x="-266.4000000000001" y="-383.0" />
+      <point x="2573.0770882936595" y="2455.0" />
+      <point x="1999.1267956349234" y="2455.0" />
+      <point x="231.0" y="693.5" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.drawingPane.DrawModePanel" target="multi_agent_painting.applet.panes.drawingPane.DrawModePanel.ControlPane">
+      <point x="63.85714285714283" y="-194.0" />
+      <point x="287.35714285714266" y="5585.0" />
+      <point x="201.96428571428623" y="5585.0" />
+      <point x="-47.25" y="58.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.sound.FilePlayer" target="multi_agent_painting.mas.sound.SoundDecoder">
+      <point x="-202.0" y="-261.5" />
+      <point x="999.2712921627071" y="175.0" />
+      <point x="644.2712921627071" y="175.0" />
+      <point x="29.5" y="72.5" />
+    </edge>
+    <edge source="multi_agent_painting.physics.laws.HotBody" target="multi_agent_painting.physics.laws.AgentsInteraction">
+      <point x="-69.25" y="-99.5" />
+      <point x="7682.251681547626" y="2375.0" />
+      <point x="7507.181850198422" y="2375.0" />
+      <point x="114.10000000000036" y="72.5" />
+    </edge>
+    <edge source="multi_agent_painting.mas.Mas" target="multi_agent_painting.physics.laws.AgentsDodge">
+      <point x="-24.33333333333303" y="-221.0" />
+      <point x="4823.135724206352" y="5505.0" />
+      <point x="4440.081850198421" y="5505.0" />
+      <point x="73.75" y="86.0" />
+    </edge>
+    <edge source="multi_agent_painting.applet.panes.drawingPane.DrawModePanel.ControlPane" target="multi_agent_painting.mas.sound.FilePlayer">
+      <point x="0.0" y="-58.5" />
+      <point x="249.21428571428623" y="4537.0" />
+      <point x="223.21428571428623" y="4537.0" />
+      <point x="223.21428571428623" y="838.0" />
+      <point x="1080.0712921627073" y="838.0" />
+      <point x="-121.19999999999982" y="261.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.40000000000000013" x="1953.9999999999993" y="886.2499999999995" />
+  <SelectedNodes>
+    <node>multi_agent_painting.physics.laws.HotBody</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
