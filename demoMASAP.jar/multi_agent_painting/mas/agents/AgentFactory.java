@@ -15,9 +15,7 @@ public class AgentFactory {
         return INSTANCE;
     }
 
-    public Agent createAgent(Class type, Space space, Kernel kernel){
-        if(type == Agent.class)
-            ;
+    public AbstractAgent createAgent(Space space, Kernel kernel){
         return new Agent(space, kernel);
     }
 }

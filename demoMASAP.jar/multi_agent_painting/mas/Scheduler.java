@@ -3,6 +3,7 @@ package multi_agent_painting.mas;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import multi_agent_painting.mas.agents.AbstractAgent;
 import tools.appControl.Logger;
 
 import multi_agent_painting.mas.agents.Agent;
@@ -26,16 +27,16 @@ public class Scheduler {
 		}
 	}
 	
-	public void schedule(final ArrayList<Agent> c) throws AgentInitException,
+	public void schedule(final ArrayList<AbstractAgent> c) throws AgentInitException,
 		AgentRuntimeException, MasException {
 		
 			if(this.messenger.isReady() && this.ready){
 				messenger.sendValue();
 				// Allow the Scheduler to shuffle the list of agent
 				// in order to be more coherent with theory
-				ArrayList<Agent> temp = c;
+				ArrayList<AbstractAgent> temp = c;
 				Collections.shuffle(temp);		
-				for (final Agent agent : temp) {
+				for (final AbstractAgent agent : temp) {
 					agent.live();
 				}
 			}else Logger.critical("#### Messenger or Scheduler not ready");

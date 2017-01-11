@@ -7,7 +7,9 @@ import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
 import multi_agent_painting.applet.panes.drawingPane.Spinner;
+import multi_agent_painting.mas.agents.AbstractAgent;
 import multi_agent_painting.mas.agents.Agent;
+import multi_agent_painting.mas.agents.AgentFactory;
 import multi_agent_painting.mas.behaviours.Behaviours;
 import multi_agent_painting.mas.behaviours.SoundPlayer;
 import multi_agent_painting.mas.behaviours.lib.InteractBehaviour;
@@ -39,22 +41,22 @@ public class Kernel implements StoppableRunnable {
 	protected Scheduler				sched;
 	private boolean					shutdown		= false;
 
-	private final ArrayList<Agent>	agents			= new ArrayList<Agent>();
+	private final ArrayList<AbstractAgent>	agents			= new ArrayList<AbstractAgent>();
 	private Space					space;
 	private boolean					ready;
 	private Spinner					spinner;
-	private final LinkedList<Agent>	agentsToRemove	= new LinkedList<Agent>();
+	private final LinkedList<AbstractAgent>	agentsToRemove	= new LinkedList<AbstractAgent>();
 
 	private String					lastCyclesNb	= " ";
 	private long					lastCycleDate;
 	private long					callNb;
 	private long					previousCallNb;
-	private HashMap<Agent, Double>	agentsFrequency;
+	private HashMap<AbstractAgent, Double>	agentsFrequency;
 
 	public Kernel() {
 	}
 
-	public boolean addAgent(final Agent a) {
+	public boolean addAgent(final AbstractAgent a) {
 		try {
 			a.init();
 		} catch (final AgentInitException e) {
@@ -81,9 +83,9 @@ public class Kernel implements StoppableRunnable {
 	 * 
 	 * @param agent
 	 */
-	private synchronized void delAgentListManagement(final Agent agent) {
+	private synchronized void delAgentListManagement(final AbstractAgent agent) {
 		if (agent == null) {
-			Agent nextAgent;
+			AbstractAgent nextAgent;
 			try {
 				do {
 					nextAgent = this.agentsToRemove.pop();
@@ -106,7 +108,7 @@ public class Kernel implements StoppableRunnable {
 	}
 
 	private boolean atLeastOneMovingAgent() {
-		for (Agent a : this.agents) {
+		for (AbstractAgent a : this.agents) {
 			if (a.isMoving()) {
 				return true;
 			}
@@ -147,10 +149,10 @@ public class Kernel implements StoppableRunnable {
 
 	public void nextStep() throws AgentInitException, AgentRuntimeException,
 			MasException {
-		this.sched.schedule(new ArrayList<Agent>(this.agents));
+		this.sched.schedule(new ArrayList<AbstractAgent>(this.agents));
 	}
 
-	public void removeAgent(final Agent agent) {
+	public void removeAgent(final AbstractAgent agent) {
 		delAgentListManagement(agent);
 	}
 
@@ -164,7 +166,7 @@ public class Kernel implements StoppableRunnable {
 			}
 			delAgentListManagement(null);
 			try {
-				this.sched.schedule(new ArrayList<Agent>(this.agents));
+				this.sched.schedule(new ArrayList<AbstractAgent>(this.agents));
 				this.space.nextStep();
 				if (this.spinner != null) {
 					this.spinner.rotate();
@@ -192,7 +194,7 @@ public class Kernel implements StoppableRunnable {
 	
 	
 	public void addPainterAgent()throws RoleInitException, AgentInitException, AgentConfigurationError{
-		final Agent a = new Agent(space, this);
+		final AbstractAgent a = AgentFactory.getInstance().createAgent(space, this);
 		  Role PaintingRole;
 		  Double[] listOfFrequency;
 		  listOfFrequency = new Double[2048];
@@ -230,7 +232,7 @@ public class Kernel implements StoppableRunnable {
 		Double value = listOfFrequency[(int)(Math.random()*listOfFrequency.length)];
 		if(agentsFrequency != null)	agentsFrequency.put(a, value);
 		else{
-			agentsFrequency = new HashMap<Agent, Double>();
+			agentsFrequency = new HashMap<AbstractAgent, Double>();
 			agentsFrequency.put(a, value);
 		}
 	}
@@ -258,7 +260,7 @@ public class Kernel implements StoppableRunnable {
 				frequencyToListen[j] = listOfFrequency[(int)(Math.random()*2048)];
 			}
 			
-			final Agent a = new Agent(space, this);
+			final AbstractAgent a = AgentFactory.getInstance().createAgent(space, this);
 		
 			a.addRole(MusicalRole);
 			a.getPhysicalInfo().sanityCheck();
@@ -288,7 +290,7 @@ public class Kernel implements StoppableRunnable {
 				frequencyToListen[j] = listOfFrequency[(int)(Math.random()*2048)];
 			}
 			
-			final Agent a = new Agent(space, this);
+			final AbstractAgent a = AgentFactory.getInstance().createAgent(space, this);
 		
 			a.addRole(EaterRole);
 			a.getPhysicalInfo().sanityCheck();
@@ -306,7 +308,7 @@ public class Kernel implements StoppableRunnable {
 			this.shutdown = true;
 			// this.spinner.shutdown();
 			this.spinner = null;
-			for (final Agent agent : this.agents) {
+			for (final AbstractAgent agent : this.agents) {
 				try {
 					agent.die();
 				} catch (final MasException e) {
@@ -338,7 +340,7 @@ public class Kernel implements StoppableRunnable {
 		return this.space.getFileToPlay();
 	}
 
-	public void setAgentsFrequency(HashMap<Agent, Double> agentsFrequency) {
+	public void setAgentsFrequency(HashMap<AbstractAgent, Double> agentsFrequency) {
 		this.agentsFrequency = agentsFrequency;		
 		this.messenger.setAgentsFrequency(agentsFrequency);
 		this.messenger.init();

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.NoSuchElementException;
 
 import multi_agent_painting.applet.panes.drawingPane.DrawPanel;
-import multi_agent_painting.mas.agents.Agent;
+import multi_agent_painting.mas.agents.AbstractAgent;
 import multi_agent_painting.mas.exceptions.MasInitException;
 import multi_agent_painting.physics.laws.Friction;
 import tools.appControl.RandomSource;
@@ -16,8 +16,8 @@ import tools.drawing.PhysicalInfo;
 public class Space {
 
 	public final double						xsize, ysize;
-	protected HashMap<Agent, PhysicalInfo>	agentsPositions	= new HashMap<Agent, PhysicalInfo>();
-	protected HashMap<Agent, PhysicalInfo>	newAgents		= new HashMap<Agent, PhysicalInfo>();
+	protected HashMap<AbstractAgent, PhysicalInfo>	agentsPositions	= new HashMap<AbstractAgent, PhysicalInfo>();
+	protected HashMap<AbstractAgent, PhysicalInfo>	newAgents		= new HashMap<AbstractAgent, PhysicalInfo>();
 	private Friction						friction;
 
 	private DrawPanel						representation;
@@ -48,7 +48,7 @@ public class Space {
 		this.map = map;
 	}
 
-	private PhysicalInfo addAgent(final Agent agent) {
+	private PhysicalInfo addAgent(final AbstractAgent agent) {
 		synchronized (this.agentsPositions) {
 			synchronized (this.newAgents) {
 				assert this.newAgents.get(agent) == null;
@@ -80,11 +80,11 @@ public class Space {
 		System.out.println("Space garbage collected.");
 	}
 
-	public Agent getAgent(final PhysicalInfo bodyPhysicalInfo) {
+	public AbstractAgent getAgent(final PhysicalInfo bodyPhysicalInfo) {
 		
 		final int fixedAgentRef = bodyPhysicalInfo.getAgentRef();
 		synchronized (this.agentsPositions) {
-			for (final Agent agent : this.agentsPositions.keySet()) {
+			for (final AbstractAgent agent : this.agentsPositions.keySet()) {
 				final PhysicalInfo physicalInfo = this.agentsPositions
 						.get(agent);
 				if (physicalInfo.getAgentRef() == fixedAgentRef) {
@@ -96,11 +96,11 @@ public class Space {
 		
 	}
 
-	public Double getAgentMass(final Agent hostingAgent) {
+	public Double getAgentMass(final AbstractAgent hostingAgent) {
 		return getPhysicsInfo(hostingAgent).getMass();
 	}
 
-	public HashMap<PhysicsVector, PhysicalInfo> getAgents(final Agent requester) {
+	public HashMap<PhysicsVector, PhysicalInfo> getAgents(final AbstractAgent requester) {
 		final PhysicalInfo requesterPhysicsInfo = getPhysicsInfo(requester);
 		final Coordinates requesterCoords = requesterPhysicsInfo
 				.getCoordinates();
@@ -129,7 +129,7 @@ public class Space {
 		}
 	}
 
-	public PhysicalInfo getPhysicsInfo(final Agent agent) {
+	public PhysicalInfo getPhysicsInfo(final AbstractAgent agent) {
 		synchronized (this.agentsPositions) {
 			PhysicalInfo p = this.agentsPositions.get(agent);
 			if (p == null) {
@@ -161,17 +161,17 @@ public class Space {
 	}
 
 	//@SuppressWarnings("unchecked")
-	public void remove(final Agent agent) {
+	public void remove(final AbstractAgent agent) {
 		synchronized (this.agentsPositions) {
 			this.agentsPositions.remove(agent);
 		}
 	}
 
-	public void setAgentTemperature(final Agent agent, final double temperature) {
+	public void setAgentTemperature(final AbstractAgent agent, final double temperature) {
 		this.getPhysicsInfo(agent).setTemperature(temperature);
 	}
 
-	public void setRadiationAbsorption(final Agent agent, final double temp) {
+	public void setRadiationAbsorption(final AbstractAgent agent, final double temp) {
 		this.getPhysicsInfo(agent).setRadiationAbsorption(temp);
 	}
 
@@ -189,9 +189,9 @@ public class Space {
 		}
 	}
 	
-	public Agent getAgentBis(PhysicalInfo pI){
+	public AbstractAgent getAgentBis(PhysicalInfo pI){
 		synchronized (this.agentsPositions) {
-		for(Agent a : this.agentsPositions.keySet()){
+		for(AbstractAgent a : this.agentsPositions.keySet()){
 			if(a.getPhysicalInfo().equals(pI))
 				return a;
 		}

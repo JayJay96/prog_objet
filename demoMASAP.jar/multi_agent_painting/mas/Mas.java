@@ -3,7 +3,9 @@ package multi_agent_painting.mas;
 import java.util.HashMap;
 
 import multi_agent_painting.applet.panes.drawingPane.DrawPanel;
+import multi_agent_painting.mas.agents.AbstractAgent;
 import multi_agent_painting.mas.agents.Agent;
+import multi_agent_painting.mas.agents.AgentFactory;
 import multi_agent_painting.mas.behaviours.Behaviours;
 import multi_agent_painting.mas.behaviours.SoundPlayer;
 import multi_agent_painting.mas.behaviours.lib.InteractBehaviour;
@@ -36,7 +38,7 @@ public class Mas {
 	public static Role MusicalRole;
 	public static Role EaterRole;
 	private static Double[] listOfFrequency;
-	private static HashMap<Agent, Double> agentsFrequency;
+	private static HashMap<AbstractAgent, Double> agentsFrequency;
 		
 	/**
 	 * Method that will initiate the MAS
@@ -115,7 +117,7 @@ public class Mas {
 			
 		for (int i = 0; i < Mas.config.agentsInitialNumber; i++) {
 					
-			final Agent a = new Agent(space, kernel);
+			final AbstractAgent a = AgentFactory.getInstance().createAgent(space, kernel);
 			
 			a.addRole(PaintingRole);
 			a.getPhysicalInfo().sanityCheck();
@@ -125,14 +127,14 @@ public class Mas {
 			Double value = listOfFrequency[(int)(Math.random()*listOfFrequency.length)];
 			if(agentsFrequency != null)	agentsFrequency.put(a, value);
 			else{
-				agentsFrequency = new HashMap<Agent, Double>();
+				agentsFrequency = new HashMap<AbstractAgent, Double>();
 				agentsFrequency.put(a, value);
 			}
 			
 		}
 	for (int i = 0; i < Mas.config.musicalAgentsInitialNumber; i++) {
 						
-			final Agent a = new Agent(space, kernel);
+			final AbstractAgent a = AgentFactory.getInstance().createAgent(space, kernel);
 		
 			a.addRole(MusicalRole);
 			a.getPhysicalInfo().sanityCheck();
@@ -141,7 +143,7 @@ public class Mas {
 		}
 	for (int i = 0; i < Mas.config.eaterAgentsInitialNumber; i++) {
 		
-		final Agent a = new Agent(space, kernel);
+		final AbstractAgent a = AgentFactory.getInstance().createAgent(space, kernel);
 		a.getPhysicalInfo().setRoleName("Eater");
 		a.addRole(EaterRole);
 		a.getPhysicalInfo().sanityCheck();
@@ -149,7 +151,7 @@ public class Mas {
 	}
 	//soleil à parametrer
 	for(int i = 0; i < 0 ; i++){
-		final Agent a = new Agent(space, kernel);
+		final AbstractAgent a = AgentFactory.getInstance().createAgent(space, kernel);
 		a.getPhysicalInfo().setRoleName("Sun");
 		
 		a.addRole(Sun);
@@ -193,7 +195,7 @@ public class Mas {
 			heavyHotBodyRole.addBehaviour(bCollision);
 			heavyHotBodyRole.addBehaviour(heavy);
 		}	
-		Agent a = new Agent(space, kernel);
+		AbstractAgent a = AgentFactory.getInstance().createAgent(space, kernel);
 		
 		a.addRole(heavyHotBodyRole);
 		
@@ -240,7 +242,7 @@ public class Mas {
 		Mas.defaultInit(this.kernel, this.masSpace);
 		
 		this.kernel.start();
-		this.agentsFrequency = new HashMap<Agent, Double>();
+		this.agentsFrequency = new HashMap<AbstractAgent, Double>();
 		
 		Logger.logLevel = Logger.LogLevel.INFO;
 		

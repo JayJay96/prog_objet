@@ -20,7 +20,7 @@ import tools.appControl.Logger;
 import tools.appControl.RandomSource;
 import tools.drawing.PhysicalInfo;
 
-public class Agent {
+public class Agent extends AbstractAgent{
 
 	private static int	nextIndex	= 0;
 
@@ -33,22 +33,17 @@ public class Agent {
 	public final Space					space;
 
 	private final Kernel				kernel;
-	
+
 	/**
 	 * This is the new role implentation
 	 */
 	private ArrayList<Role> 			roles;
-	
+
 	private boolean						dead		= false;
-	
+
 	private Double 						musicalValue = 0.0;
 	private Double						oldMusicalValue = musicalValue;
-	
-	/**
-	 * Now enableBehaviours are contain in the role
-	 * not in the agent.
-	 */
-	//final private ArrayList<Behaviours>	enabledBehaviours;
+
 	final private PhysicalInfo			physicalInfo;
 
 	public final int					index;

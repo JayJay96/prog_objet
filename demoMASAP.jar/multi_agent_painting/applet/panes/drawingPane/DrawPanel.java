@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 
 import multi_agent_painting.mas.Kernel;
 import multi_agent_painting.mas.Mas;
-import multi_agent_painting.mas.agents.Agent;
+import multi_agent_painting.mas.agents.AbstractAgent;
 import multi_agent_painting.mas.exceptions.AgentConfigurationError;
 import multi_agent_painting.mas.exceptions.AgentInitException;
 import multi_agent_painting.mas.exceptions.MasException;
@@ -162,7 +162,7 @@ public class DrawPanel extends JPanel {
 				if (isVisible(coord)) {
 					
 					// Seems to be the drawing of the agent's circle		}
-					 Agent agent1 = this.space.getAgentBis(physicalInfo);
+					 AbstractAgent agent1 = this.space.getAgentBis(physicalInfo);
 					 
 //					//Change color to see the difference between each agents.
 					 
@@ -183,7 +183,7 @@ public class DrawPanel extends JPanel {
 					
 				} else if (tooFar(coord)) {
 					try {
-						final Agent agent = this.space.getAgent(physicalInfo);
+						final AbstractAgent agent = this.space.getAgent(physicalInfo);
 						if(agent.getRoles().get(0).getName().equals("Musical") ){
 							try {
 								this.kernel.addMusicalAgent();
