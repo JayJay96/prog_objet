@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/lib/lib/commons-math-1.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/commons-math-1.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/lib/lib/jl1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/jl1.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -28,7 +28,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/lib/lib/mp3spi1.9.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/tritonus_share.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -37,7 +37,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/lib/lib/tritonus_share.jar!/" />
+          <root url="jar://$MODULE_DIR$/mp3spi1.9.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
