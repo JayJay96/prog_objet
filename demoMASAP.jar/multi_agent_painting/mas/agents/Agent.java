@@ -314,13 +314,6 @@ public class Agent {
 		}
 	}
 
-	
-	
-	public synchronized boolean remove(final Behaviours Behaviours) {
-		return dead;
-		//throw new NotImplementedException();
-	}
-
 	public boolean isMoving() {
 		return this.physicalInfo.isMoving();
 	}

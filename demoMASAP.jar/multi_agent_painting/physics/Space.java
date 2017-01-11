@@ -107,8 +107,7 @@ public class Space {
 
 		final HashMap<PhysicsVector, PhysicalInfo> result = new HashMap<PhysicsVector, PhysicalInfo>();
 		synchronized (this.agentsPositions) {
-			for (final PhysicalInfo physicalInfo : this.agentsPositions
-					.values()) {
+			for (final PhysicalInfo physicalInfo : this.agentsPositions.values()) {
 				if (requesterPhysicsInfo != physicalInfo) {
 					final Coordinates otherAgentCoordinates = physicalInfo
 							.getCoordinates();
