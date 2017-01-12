@@ -14,7 +14,7 @@ import tools.drawing.PhysicalInfo;
  * @author Feth
  * 
  */
-public abstract class AgentsInteraction {
+public abstract class AgentsInteraction implements Interactable {
 	final PhysicProperty	physicsProperty;
 
 	public AgentsInteraction(final PhysicProperty physicsProperty) {
