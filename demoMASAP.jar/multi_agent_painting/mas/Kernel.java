@@ -1,6 +1,7 @@
 package multi_agent_painting.mas;
 
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -8,10 +9,8 @@ import java.util.NoSuchElementException;
 
 import multi_agent_painting.applet.panes.drawingPane.Spinner;
 import multi_agent_painting.mas.agents.AbstractAgent;
-import multi_agent_painting.mas.agents.Agent;
 import multi_agent_painting.mas.agents.AgentFactory;
 import multi_agent_painting.mas.behaviours.Behaviours;
-import multi_agent_painting.mas.behaviours.SoundPlayer;
 import multi_agent_painting.mas.behaviours.lib.InteractBehaviour;
 import multi_agent_painting.mas.exceptions.AgentConfigurationError;
 import multi_agent_painting.mas.exceptions.AgentInitException;
@@ -20,14 +19,11 @@ import multi_agent_painting.mas.exceptions.KernelException;
 import multi_agent_painting.mas.exceptions.MasException;
 import multi_agent_painting.mas.exceptions.MasInitException;
 import multi_agent_painting.mas.exceptions.RoleInitException;
-import multi_agent_painting.mas.roles.Role;
+import multi_agent_painting.mas.roles.*;
 import multi_agent_painting.physics.Space;
 import multi_agent_painting.physics.laws.AgentsCollision;
 import multi_agent_painting.physics.laws.AgentsDodge;
-import multi_agent_painting.physics.laws.DodgePainter;
 import multi_agent_painting.physics.laws.Gravity;
-import multi_agent_painting.physics.laws.HeavytBody;
-import multi_agent_painting.physics.laws.HotBody;
 import multi_agent_painting.physics.laws.ListenToMusic;
 import multi_agent_painting.physics.laws.Radiation;
 import multi_agent_painting.physics.laws.speedDown;
@@ -186,46 +182,16 @@ public class Kernel implements StoppableRunnable {
 			}
 		}
 	}
-
-	public void setSpinner(final Spinner spinner) {
-		this.spinner = spinner;
-
-	}
 	
-	
-	public void addPainterAgent()throws RoleInitException, AgentInitException, AgentConfigurationError{
-		final AbstractAgent a = AgentFactory.getInstance().createAgent(space, this);
-		  Role PaintingRole;
-		  Double[] listOfFrequency;
-		  listOfFrequency = new Double[2048];
-			
-			for(int i = 0 ; i<2048 ; ++i){
-				listOfFrequency[i] = (i*44100.0/4096);
-			}
-		
-		final Behaviours bGravitation = new InteractBehaviour(new Gravity(
-				Mas.config));
+	public void addPainterAgent() throws RoleInitException, AgentInitException, AgentConfigurationError, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+	  	Double[] listOfFrequency = new Double[2048];
+		for(int i = 0 ; i<2048 ; ++i){
+			listOfFrequency[i] = (i*44100.0/4096);
+		}
 
-		final Behaviours bRadiation = new InteractBehaviour(new Radiation(
-				Mas.config));
 
-		final Behaviours bCollision = new InteractBehaviour(
-				new AgentsCollision(Mas.config));
-		final Behaviours bListen = new InteractBehaviour(
-				new ListenToMusic(Mas.config));
-		final Behaviours bspeed = new InteractBehaviour(
-				new speedDown(Mas.config));
-		
-		
-			PaintingRole = new Role("Painter");
-			PaintingRole.addBehaviour(bGravitation);
-			PaintingRole.addBehaviour(bRadiation);
-			PaintingRole.addBehaviour(bListen);
-			PaintingRole.addBehaviour(bspeed);
-			PaintingRole.addBehaviour(bCollision);
-		
-		a.addRole(PaintingRole);
-		a.getPhysicalInfo().sanityCheck();
+		AbstractRole paintingRole = RoleFactory.getInstance().createRoleInit(PainterRole.class);
+		final AbstractAgent a = AgentFactory.getInstance().createAgent(space, this, paintingRole);
 		a.getPhysicalInfo().setInteraction(false);
 		a.getPhysicalInfo().setRoleName("Painter");
 		this.addAgent(a);
@@ -237,65 +203,17 @@ public class Kernel implements StoppableRunnable {
 		}
 	}
 
-	public void addMusicalAgent()throws RoleInitException, AgentInitException, AgentConfigurationError{
-		Role MusicalRole;
-		Double listOfFrequency[] = new Double[2048];
-		final Behaviours bGravitation = new InteractBehaviour(new Gravity(
-				Mas.config));
-
-		final Behaviours bRadiation = new InteractBehaviour(new Radiation(
-				Mas.config));
-
-		final Behaviours bdodge = new InteractBehaviour(
-				new AgentsDodge(Mas.config));
-		
-			MusicalRole = new Role("Musical");
-			MusicalRole.addBehaviour(bGravitation);
-			MusicalRole.addBehaviour(bdodge);
-			MusicalRole.addBehaviour(bRadiation);
-
-			Double frequencyToListen[] = new Double[10];
-			
-			for(int j = 0 ; j < 4 ; ++j){
-				frequencyToListen[j] = listOfFrequency[(int)(Math.random()*2048)];
-			}
-			
-			final AbstractAgent a = AgentFactory.getInstance().createAgent(space, this);
-		
-			a.addRole(MusicalRole);
-			a.getPhysicalInfo().sanityCheck();
-			a.getPhysicalInfo().setRoleName("Musical");
-			this.addAgent(a);
+	public void addMusicalAgent() throws RoleInitException, AgentInitException, AgentConfigurationError, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+		AbstractRole musicalRole = RoleFactory.getInstance().createRoleInit(MusicalRole.class);
+        final AbstractAgent a = AgentFactory.getInstance().createAgent(space, this, musicalRole);
+        a.getPhysicalInfo().setRoleName("Musical");
+        this.addAgent(a);
 	}
-	public void addEaterAgent()throws RoleInitException, AgentInitException, AgentConfigurationError{
-		Role EaterRole;
-		Double listOfFrequency[] = new Double[2048];
-		final Behaviours bGravitation = new InteractBehaviour(new Gravity(
-				Mas.config));
-
-		final Behaviours bRadiation = new InteractBehaviour(new Radiation(
-				Mas.config));
-
-		final Behaviours bdodge = new InteractBehaviour(
-				new AgentsDodge(Mas.config));
-		
-		EaterRole = new Role("Eater");
-		EaterRole.addBehaviour(bGravitation);
-		EaterRole.addBehaviour(bdodge);
-		EaterRole.addBehaviour(bRadiation);
-
-			Double frequencyToListen[] = new Double[10];
-			
-			for(int j = 0 ; j < 4 ; ++j){
-				frequencyToListen[j] = listOfFrequency[(int)(Math.random()*2048)];
-			}
-			
-			final AbstractAgent a = AgentFactory.getInstance().createAgent(space, this);
-		
-			a.addRole(EaterRole);
-			a.getPhysicalInfo().sanityCheck();
-			a.getPhysicalInfo().setRoleName("Eater");
-			this.addAgent(a);
+	public void addEaterAgent() throws RoleInitException, AgentInitException, AgentConfigurationError, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+		AbstractRole eaterRole = RoleFactory.getInstance().createRoleInit(EaterRole.class);
+		final AbstractAgent a = AgentFactory.getInstance().createAgent(space, this, eaterRole);
+		a.getPhysicalInfo().setRoleName("Eater");
+		this.addAgent(a);
 	}
 	
 	public void setState(final KernelState state) {

@@ -1,6 +1,7 @@
 package multi_agent_painting.physics.laws;
 
 import multi_agent_painting.mas.MASConfiguration;
+import multi_agent_painting.mas.agents.AbstractAgent;
 import multi_agent_painting.mas.agents.Agent;
 import multi_agent_painting.mas.agents.PhysicalForces;
 import multi_agent_painting.mas.exceptions.AgentConfigurationError;
@@ -28,7 +29,7 @@ public class HeavytBody extends AgentsInteraction{
 
 
 	@Override
-	public void addPhysicsValues(final Agent hostingAgent)
+	public void addPhysicsValues(final AbstractAgent hostingAgent)
 			throws AgentConfigurationError {
 		double mass;	
 			mass = this.minMass;		
@@ -38,7 +39,7 @@ public class HeavytBody extends AgentsInteraction{
 
 	@Override
 	public PhysicalForces interact(
-			final Agent hostingAgent,
+			final AbstractAgent hostingAgent,
 			final PhysicsVector vector,
 			final PhysicalInfo bodyPhysicalInfo,
 			Space space) {

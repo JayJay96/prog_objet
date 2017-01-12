@@ -1,5 +1,6 @@
 package multi_agent_painting.mas.behaviours.lib;
 
+import multi_agent_painting.mas.agents.AbstractAgent;
 import multi_agent_painting.mas.agents.Agent;
 import multi_agent_painting.mas.agents.PhysicalForces;
 import multi_agent_painting.mas.behaviours.Behaviour;
@@ -24,14 +25,14 @@ public class InteractBehaviour extends Behaviours {
 	}
 
 	@InitAgent
-	public void addPhysicsValues(final Agent hostingAgent)
+	public void addPhysicsValues(final AbstractAgent hostingAgent)
 			throws AgentConfigurationError {
 		this.accelInteraction.addPhysicsValues(hostingAgent);
 	}
 
 	@Behaviour
 	public PhysicalForces gravite(
-			final Agent hostingAgent,
+			final AbstractAgent hostingAgent,
 			final PhysicsVector vector,
 			final PhysicalInfo bodyPhysicalInfo,
 			final Space space) throws AgentRuntimeException {

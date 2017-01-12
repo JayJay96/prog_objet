@@ -1,8 +1,9 @@
 package multi_agent_painting.mas.exceptions;
 
 import java.lang.reflect.Method;
- 
 
+
+import multi_agent_painting.mas.agents.AbstractAgent;
 import multi_agent_painting.mas.agents.Agent;
 import tools.appControl.Logger;
 
@@ -17,7 +18,7 @@ public class AgentRuntimeException extends Exception {
 		super(e);
 	}
 
-	public AgentRuntimeException(final Exception e, final Agent agent,
+	public AgentRuntimeException(final Exception e, final AbstractAgent agent,
 			final Method behaviour) {
 		super(e);
 		Logger.critical("runtime error. while " + agent.getClass()

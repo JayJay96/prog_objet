@@ -2,6 +2,8 @@ package multi_agent_painting.mas.behaviours;
 
 
 import java.util.HashMap;
+
+import multi_agent_painting.mas.agents.AbstractAgent;
 import tools.drawing.PhysicalInfo;
 import multi_agent_painting.mas.agents.Agent;
 import multi_agent_painting.mas.agents.PhysicalForces;
@@ -18,14 +20,11 @@ public class SoundPlayer extends Behaviours {
 	}
 	
 	public synchronized PhysicalForces react(
-			final Agent hostingAgent,
+			final AbstractAgent hostingAgent,
 			final PhysicsVector vector,
 			final PhysicalInfo bodyPhysicalInfo,
 			final Space space) throws AgentRuntimeException {
 		final PhysicalForces result = PhysicalForces.NONE.modifiableCopy();
-			//HashMap<Double, Double> map = space.getMap();
-	
-			
 		return result;
 	}
 

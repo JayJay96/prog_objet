@@ -1,10 +1,10 @@
 package multi_agent_painting.mas;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 
 import multi_agent_painting.applet.panes.drawingPane.DrawPanel;
 import multi_agent_painting.mas.agents.AbstractAgent;
-import multi_agent_painting.mas.agents.Agent;
 import multi_agent_painting.mas.agents.AgentFactory;
 import multi_agent_painting.mas.behaviours.Behaviours;
 import multi_agent_painting.mas.behaviours.SoundPlayer;
@@ -13,7 +13,7 @@ import multi_agent_painting.mas.exceptions.AgentConfigurationError;
 import multi_agent_painting.mas.exceptions.AgentInitException;
 import multi_agent_painting.mas.exceptions.MasInitException;
 import multi_agent_painting.mas.exceptions.RoleInitException;
-import multi_agent_painting.mas.roles.Role;
+import multi_agent_painting.mas.roles.*;
 import multi_agent_painting.mas.sound.FilePlayer;
 import multi_agent_painting.mas.sound.LineEntryPlayer;
 import multi_agent_painting.physics.Space;
@@ -32,11 +32,11 @@ import tools.appControl.Logger;
 public class Mas {
 
 	public static MASConfiguration	config	= MASConfiguration.defaultConf;
-	public static Role PaintingRole;
-	public static Role heavyHotBodyRole;
-	public static Role Sun;
-	public static Role MusicalRole;
-	public static Role EaterRole;
+	public static AbstractRole PaintingRole;
+	public static AbstractRole heavyHotBodyRole;
+	public static AbstractRole sun;
+	public static AbstractRole musicalRole;
+	public static AbstractRole eaterRole;
 	private static Double[] listOfFrequency;
 	private static HashMap<AbstractAgent, Double> agentsFrequency;
 		
@@ -49,7 +49,7 @@ public class Mas {
 	 * @throws AgentConfigurationError
 	 */
 	private static void defaultInit(final Kernel kernel, final Space space)
-			throws RoleInitException, AgentInitException, AgentConfigurationError {
+			throws RoleInitException, AgentInitException, AgentConfigurationError, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
 		
 		listOfFrequency = new Double[2048];
 		
@@ -87,7 +87,7 @@ public class Mas {
 		 *  - radiation
 		 */		
 		if(PaintingRole == null){
-			PaintingRole = new Role("Painter");
+			PaintingRole = RoleFactory.getInstance().createRole(PainterRole.class);
 			PaintingRole.addBehaviour(bGravitation);
 			//PaintingRole.addBehaviour(bdodgePainter);
 			PaintingRole.addBehaviour(bRadiation);
@@ -95,24 +95,24 @@ public class Mas {
 			PaintingRole.addBehaviour(bspeed);
 			PaintingRole.addBehaviour(bCollision);
 		}
-		if(MusicalRole == null){
-			MusicalRole = new Role("Musical");
-			MusicalRole.addBehaviour(bGravitation);
-			MusicalRole.addBehaviour(bdodge);
-			MusicalRole.addBehaviour(bRadiation);
-			MusicalRole.addBehaviour(sPlayer);
+		if(musicalRole == null){
+			musicalRole = RoleFactory.getInstance().createRole(MusicalRole.class);
+			musicalRole.addBehaviour(bGravitation);
+			musicalRole.addBehaviour(bdodge);
+			musicalRole.addBehaviour(bRadiation);
+			musicalRole.addBehaviour(sPlayer);
 		}
-		if(EaterRole == null){
-			EaterRole = new Role("Eater");
-			EaterRole.addBehaviour(bGravitation);
-			EaterRole.addBehaviour(bdodge);
-			//EaterRole.addBehaviour(bCollision);
-			EaterRole.addBehaviour(bRadiation);
+		if(eaterRole == null){
+			eaterRole = RoleFactory.getInstance().createRole(EaterRole.class);
+			eaterRole.addBehaviour(bGravitation);
+			eaterRole.addBehaviour(bdodge);
+			//eaterRole.addBehaviour(bCollision);
+			eaterRole.addBehaviour(bRadiation);
 		}
-		if(Sun == null){
-			Sun=new Role("Sun");
-			Sun.addBehaviour(bhot);
-			Sun.addBehaviour(bheavy);
+		if(sun == null){
+			sun =RoleFactory.getInstance().createRole(SunRole.class);
+			sun.addBehaviour(bhot);
+			sun.addBehaviour(bheavy);
 		}
 			
 		for (int i = 0; i < Mas.config.agentsInitialNumber; i++) {
@@ -136,7 +136,7 @@ public class Mas {
 						
 			final AbstractAgent a = AgentFactory.getInstance().createAgent(space, kernel);
 		
-			a.addRole(MusicalRole);
+			a.addRole(musicalRole);
 			a.getPhysicalInfo().sanityCheck();
 			a.getPhysicalInfo().setRoleName("Musical");
 			kernel.addAgent(a);
@@ -145,16 +145,16 @@ public class Mas {
 		
 		final AbstractAgent a = AgentFactory.getInstance().createAgent(space, kernel);
 		a.getPhysicalInfo().setRoleName("Eater");
-		a.addRole(EaterRole);
+		a.addRole(eaterRole);
 		a.getPhysicalInfo().sanityCheck();
 		kernel.addAgent(a);
 	}
 	//soleil à parametrer
 	for(int i = 0; i < 0 ; i++){
 		final AbstractAgent a = AgentFactory.getInstance().createAgent(space, kernel);
-		a.getPhysicalInfo().setRoleName("Sun");
+		a.getPhysicalInfo().setRoleName("sun");
 		
-		a.addRole(Sun);
+		a.addRole(sun);
 		a.getPhysicalInfo().sanityCheck();
 		kernel.addAgent(a);
 	}
@@ -185,12 +185,12 @@ public class Mas {
 			final Space space,
 			final double temp,
 			final Behaviours bCollision, double mass) throws RoleInitException,
-			AgentInitException, AgentConfigurationError {
+			AgentInitException, AgentConfigurationError, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
 		Behaviours hotRadiation = new InteractBehaviour(new Radiation(temp));
 		Behaviours heavy = new InteractBehaviour(new Gravity(config, mass));
 		
 		if(heavyHotBodyRole == null){
-			heavyHotBodyRole = new Role("heavyHotBodyRole");
+			heavyHotBodyRole = RoleFactory.getInstance().createRole(HeavyHotBodyRole.class);
 			heavyHotBodyRole.addBehaviour(hotRadiation);
 			heavyHotBodyRole.addBehaviour(bCollision);
 			heavyHotBodyRole.addBehaviour(heavy);
@@ -218,7 +218,7 @@ public class Mas {
 	 * @throws AgentConfigurationError
 	 */
 	public Mas(final DrawPanel drawPanel) throws AgentInitException,
-			RoleInitException, MasInitException, AgentConfigurationError {
+			RoleInitException, MasInitException, AgentConfigurationError, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
 	
 		this.masSpace = new Space(
 				Drag.getSingleton(), 

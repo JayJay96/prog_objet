@@ -12,6 +12,7 @@ import java.awt.event.MouseEvent;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -172,7 +173,7 @@ public class DrawPanel extends JPanel {
 				}
 					else if(agent1.getRoles().get(0).getName().equals("Eater")){
 						g.setColor(Color.GREEN);
-					}else if(agent1.getRoles().get(0).getName().equals("Sun")){
+					}else if(agent1.getRoles().get(0).getName().equals("sun")){
 						g.setColor(Color.YELLOW);
 					}else{
 						g.setColor(Color.BLUE);
@@ -196,6 +197,14 @@ public class DrawPanel extends JPanel {
 							} catch (AgentConfigurationError e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
+							} catch (NoSuchMethodException e) {
+								e.printStackTrace();
+							} catch (InstantiationException e) {
+								e.printStackTrace();
+							} catch (IllegalAccessException e) {
+								e.printStackTrace();
+							} catch (InvocationTargetException e) {
+								e.printStackTrace();
 							}
 						}
 						if(agent.getRoles().get(0).getName().equals("Eater") ){
@@ -210,6 +219,14 @@ public class DrawPanel extends JPanel {
 							} catch (AgentConfigurationError e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
+							} catch (NoSuchMethodException e) {
+								e.printStackTrace();
+							} catch (InstantiationException e) {
+								e.printStackTrace();
+							} catch (IllegalAccessException e) {
+								e.printStackTrace();
+							} catch (InvocationTargetException e) {
+								e.printStackTrace();
 							}
 						}
 						if(agent.getRoles().get(0).getName().equals("Painter") ){
@@ -223,6 +240,14 @@ public class DrawPanel extends JPanel {
 								e.printStackTrace();
 							} catch (AgentConfigurationError e) {
 								// TODO Auto-generated catch block
+								e.printStackTrace();
+							} catch (NoSuchMethodException e) {
+								e.printStackTrace();
+							} catch (InstantiationException e) {
+								e.printStackTrace();
+							} catch (IllegalAccessException e) {
+								e.printStackTrace();
+							} catch (InvocationTargetException e) {
 								e.printStackTrace();
 							}
 						}

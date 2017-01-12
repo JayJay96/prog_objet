@@ -1,5 +1,6 @@
 package multi_agent_painting.physics.laws;
 
+import multi_agent_painting.mas.agents.AbstractAgent;
 import multi_agent_painting.mas.agents.Agent;
 import multi_agent_painting.mas.agents.PhysicalForces;
 import multi_agent_painting.mas.exceptions.AgentConfigurationError;
@@ -22,7 +23,7 @@ public abstract class AgentsInteraction {
 		this.physicsProperty = physicsProperty;
 	}
 
-	public abstract void addPhysicsValues(Agent hostingAgent)
+	public abstract void addPhysicsValues(AbstractAgent hostingAgent)
 			throws AgentConfigurationError;
 
 	public PhysicProperty getProperty() {
@@ -36,7 +37,7 @@ public abstract class AgentsInteraction {
 	 */
 
 	public abstract PhysicalForces interact(
-			Agent hostingAgent,
+			AbstractAgent hostingAgent,
 			PhysicsVector vector,
 			PhysicalInfo bodyPhysicalInfo,
 			Space space) throws AgentRuntimeException;

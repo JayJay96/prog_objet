@@ -2,7 +2,6 @@ package multi_agent_painting.mas.agents;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map.Entry;
 
 import multi_agent_painting.mas.Kernel;
 import multi_agent_painting.mas.behaviours.Behaviours;
@@ -12,7 +11,7 @@ import multi_agent_painting.mas.exceptions.AgentRuntimeException;
 import multi_agent_painting.mas.exceptions.ImmutableException;
 import multi_agent_painting.mas.exceptions.MasException;
 import multi_agent_painting.mas.exceptions.RoleInitException;
-import multi_agent_painting.mas.roles.Role;
+import multi_agent_painting.mas.roles.AbstractRole;
 import multi_agent_painting.physics.PhysicsVector;
 import multi_agent_painting.physics.Space;
 //import sun.reflect.generics.reflectiveObjects.NotImplementedException;
@@ -22,48 +21,12 @@ import tools.drawing.PhysicalInfo;
 
 public class Agent extends AbstractAgent{
 
-	private static int	nextIndex	= 0;
-
-	private static int getNextIndex() {
-		Agent.nextIndex++;
-		return Agent.nextIndex;
-	}
-
-	private volatile boolean			ready		= false;
-	public final Space					space;
-
-	private final Kernel				kernel;
-
-	/**
-	 * This is the new role implentation
-	 */
-	private ArrayList<Role> 			roles;
-
-	private boolean						dead		= false;
-
-	private Double 						musicalValue = 0.0;
-	private Double						oldMusicalValue = musicalValue;
-
-	final private PhysicalInfo			physicalInfo;
-
-	public final int					index;
-	private boolean						explodable	= false;
-	private boolean						willDie;
-	private boolean						willExplode;
-
 	public Agent(final Space space, final Kernel kernel) {
-		this.roles = new ArrayList<Role>();		
-		this.space = space;
-		this.kernel = kernel;
-		this.physicalInfo = this.space.getPhysicsInfo(this);
-		this.index = Agent.getNextIndex();
-		this.physicalInfo.setAgentRef(this.index);
-		this.musicalValue = 0.0;
-		Logger.info("New agent " + this.index);
+		super(space, kernel);
 	}
 
 	
-	public synchronized void addRole(Role role) throws AgentInitException {
+	public synchronized void addRole(AbstractRole role) throws AgentInitException {
 		this.roles.add(role);
 		for(Behaviours b : role.getBehaviours() ){
 			//this.enabledBehaviours.add(b);
@@ -76,9 +39,9 @@ public class Agent extends AbstractAgent{
 		}
 	}
 	
-	public synchronized void addRoles(ArrayList<Role> role) throws AgentInitException{
+	public synchronized void addRoles(ArrayList<AbstractRole> role) throws AgentInitException{
 		this.roles.addAll(role);
-		for(Role r : role){
+		for(AbstractRole r : role){
 			for(Behaviours b : r.getBehaviours()){
 				//this.enabledBehaviours.add(b);
 				try {
@@ -250,17 +213,12 @@ public class Agent extends AbstractAgent{
 			MasException {
 		// safety tests
 		if (!this.ready) {
-			throw new AgentInitException(
-					"init() should be called before live()");
+			throw new AgentInitException("init() should be called before live()");
 		}
-		final StackTraceElement stackTraceElement = Thread.currentThread()
-				.getStackTrace()[2];
+		final StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[2];
 		final String callerName = stackTraceElement.getClassName();
-		if (!callerName.equals(multi_agent_painting.mas.Scheduler.class
-				.getName())) {
-			throw new AgentInitException(
-					"live must be called by scheduler. (caller name: "
-							+ callerName + ")");
+		if (!callerName.equals(multi_agent_painting.mas.Scheduler.class.getName())) {
+			throw new AgentInitException("live must be called by scheduler. (caller name: " + callerName + ")");
 		}
 				
 		if (!this.dead) {
@@ -277,15 +235,13 @@ public class Agent extends AbstractAgent{
 
 				for (final PhysicsVector vector : bodies.keySet()) {
 					
-					for(Role r : this.roles){
+					for(AbstractRole r : this.roles){
 						for (final Behaviours behaviour : r.getEnabledBehaviours()) {					
 							// never called
-							final PhysicalInfo bodyPhysicalInfo = bodies
-									.get(vector);	
+							final PhysicalInfo bodyPhysicalInfo = bodies.get(vector);
 																	
 							assert bodyPhysicalInfo.getMass() != 0;
-							final PhysicalForces partialReact = behaviour.react(
-									this, vector, bodyPhysicalInfo,space);
+							final PhysicalForces partialReact = behaviour.react(this, vector, bodyPhysicalInfo,space);
 							try {
 								reaction.add(partialReact);
 							} catch (final ImmutableException e) {
@@ -318,7 +274,7 @@ public class Agent extends AbstractAgent{
 	 * assigned to this agent
 	 * @return
 	 */
-	public ArrayList<Role> getRoles(){
+	public ArrayList<AbstractRole> getRoles(){
 		return this.roles;
 	}
 

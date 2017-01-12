@@ -1,6 +1,7 @@
 package multi_agent_painting.mas.roles;
 
 import java.util.ArrayList;
+import java.util.function.BooleanSupplier;
 
 import tools.appControl.Logger;
 
@@ -21,63 +22,55 @@ import multi_agent_painting.mas.behaviours.Behaviours;
  *  
  *
  */
-public class Role {
-	private String name;
-	private ArrayList<Behaviours> behaviours;
-	private ArrayList<Behaviours>	enabledBehaviours;
-	
-	/**
-	 * Default builder without parameters
-	 */
-	@Deprecated
-	public Role(){
-		this.name= "";
-		this.behaviours = new ArrayList<Behaviours>();
-		this.enabledBehaviours = new ArrayList<Behaviours>();
-	}
+public abstract class AbstractRole implements Rolable{
+
+
+	protected String name;
+	protected ArrayList<Behaviours> behaviours;
+	protected ArrayList<Behaviours>	enabledBehaviours;
 	
 	/**
 	 * Constructor with name
 	 * @param name : String - Name of the role
 	 * 
 	 */
-	public Role(String name){
+	public AbstractRole(String name){
 		this.name = name;
 		this.behaviours = new ArrayList<Behaviours>();
 		this.enabledBehaviours = new ArrayList<Behaviours>();
 	}
-	
-	/**
-	 * Constructor by copying
-	 * @param name : String - Name of the role
-	 * @param roles : ArrayList<Behaviours> - List of behaviors attached to the role
-	 */
-	public Role(String name, ArrayList<Behaviours> roles){
-		this.name = name;
+
+	public AbstractRole(){
+		this.name = "";
 		this.behaviours = new ArrayList<Behaviours>();
 		this.enabledBehaviours = new ArrayList<Behaviours>();
-		
-		this.behaviours.addAll(roles);
-		this.enabledBehaviours.addAll(roles);
 	}
-	
+
 	/**
-	 * Method providing the name of the role
-	 * @return this.name;
+	 * Use to init role with Behavior
+	 * @param b
 	 */
+	public AbstractRole(Boolean b){
+		this.name = "";
+		this.behaviours = new ArrayList<Behaviours>();
+		this.enabledBehaviours = new ArrayList<Behaviours>();
+	}
+
+
+
 	public String getName(){
 		return this.name;
 	}
-	
+
 	/**
-	 * Method to get the list of all current behaviors attached 
+	 * Method to get the list of all current behaviors attached
 	 * to the role.
 	 * @return
 	 */
 	public ArrayList<Behaviours> getBehaviours(){
 		return this.behaviours;
 	}
-	
+
 	/**
 	 * Method to add a behavior to the current list
 	 * @param behave
@@ -85,25 +78,12 @@ public class Role {
 	public void addBehaviour(Behaviours behave){
 		if(this.behaviours.contains(behave)){
 			Logger.info("Behaviour already in the list : " + behave.getClass().toString());
-		}else{				
+		}else{
 			this.behaviours.add(behave);
 			this.enabledBehaviours.add(behave);
 		}
 	}
-	
-	/**
-	 * Method to remove a behavior form the current list.
-	 * @param behave
-	 */
-	public void delBehaviour(Behaviours behave){
-		if(this.behaviours.contains(behave)){
-			this.behaviours.remove(behave);
-			this.enabledBehaviours.remove(behave);
-		}else{
-			Logger.info("This behavior isn't in the current list : " + behave.getClass().toString());
-		}
-	}
-	
+
 	/**
 	 * Method to get all enable behaviors
 	 * @return
@@ -111,5 +91,4 @@ public class Role {
 	public ArrayList<Behaviours> getEnabledBehaviours(){
 		return this.enabledBehaviours;
 	}
-	
 }

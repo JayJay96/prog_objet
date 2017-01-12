@@ -3,7 +3,7 @@ package multi_agent_painting.mas.behaviours;
 import java.lang.reflect.Method;
 import java.util.HashSet;
 
-import multi_agent_painting.mas.agents.Agent;
+import multi_agent_painting.mas.agents.AbstractAgent;
 import multi_agent_painting.mas.agents.PhysicalForces;
 import multi_agent_painting.mas.exceptions.AgentRuntimeException;
 import multi_agent_painting.mas.exceptions.RoleInitException;
@@ -45,24 +45,11 @@ public abstract class Behaviours {
 		Logger.info("init done for " + this);
 	}
 
-	public void blindBehaviours(final Agent agent) throws AgentRuntimeException {
-		for (final Method behaviour : this.behaviours) {
-			try {
-				Logger.debug("agent " + agent.hashCode() + "/"
-						+ this.getClass().getSimpleName() + "::blind::"
-						+ behaviour.getName());
-				behaviour.invoke(this, agent);
-			} catch (final Exception e) {
-				throw new AgentRuntimeException(e);
-			}
-		}
-	}
-
 	public Method getInitMethod() {
 		return this.initMethod;
 	}
 
-	public void init(final Agent hostingAgent) throws RoleInitException {
+	public void init(final AbstractAgent hostingAgent) throws RoleInitException {
 		if (this.initMethod != null) {
 			try {
 				this.initMethod.invoke(this, hostingAgent);
@@ -73,7 +60,7 @@ public abstract class Behaviours {
 	}
 
 	public PhysicalForces react(
-			final Agent hostingAgent,
+			final AbstractAgent hostingAgent,
 			final PhysicsVector vector,
 			final PhysicalInfo bodyPhysicalInfo,
 			final Space space) throws AgentRuntimeException {
@@ -97,11 +84,6 @@ public abstract class Behaviours {
 	@Override
 	public String toString() {
 		return "[(" + this.getClass().getSimpleName() + this.behaviours + ")]";
-	}
-
-	public void setMusicalValue(Double value) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
