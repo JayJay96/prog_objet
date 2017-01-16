@@ -1,5 +1,6 @@
 package multi_agent_painting.physics.laws;
 
+import multi_agent_painting.mas.agents.AbstractAgent;
 import multi_agent_painting.mas.agents.Agent;
 import multi_agent_painting.mas.agents.PhysicalForces;
 import multi_agent_painting.mas.exceptions.AgentConfigurationError;
@@ -15,12 +16,12 @@ public interface Interactable {
 
 
     public PhysicalForces interact(
-            Agent hostingAgent,
+            AbstractAgent hostingAgent,
             PhysicsVector vector,
             PhysicalInfo bodyPhysicalInfo,
             Space space) throws AgentRuntimeException;
 
-    public void addPhysicsValues(Agent hostingAgent)
+    public void addPhysicsValues(AbstractAgent hostingAgent)
             throws AgentConfigurationError;
 
 }
