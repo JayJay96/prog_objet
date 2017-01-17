@@ -17,7 +17,7 @@ public class PhysicalInfo {
 	public static final Color	DEFAULT_INITIAL_COLOR	= new Color(0);
 	final Friction				friction;
 
-	private Coordinates			lastCoordinates			= Coordinates.ORIGIN;
+	private Coordinates lastCoordinates			= Coordinates.ORIGIN;
 	private String				roleName = new String();
 	private Coordinates			coordinates;
 	private PhysicsVector		speed					= new PhysicsVector(0,

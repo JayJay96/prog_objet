@@ -6,7 +6,6 @@ import multi_agent_painting.mas.agents.Agent;
 import multi_agent_painting.mas.agents.PhysicalForces;
 import multi_agent_painting.physics.PhysicsVector;
 import multi_agent_painting.physics.Space;
-import tools.appControl.Logger;
 import tools.appControl.RandomSource;
 import tools.drawing.PhysicalInfo;
 

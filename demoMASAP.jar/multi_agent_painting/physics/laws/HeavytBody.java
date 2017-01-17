@@ -7,8 +7,6 @@ import multi_agent_painting.mas.agents.PhysicalForces;
 import multi_agent_painting.mas.exceptions.AgentConfigurationError;
 import multi_agent_painting.physics.PhysicsVector;
 import multi_agent_painting.physics.Space;
-import tools.appControl.Logger;
-import tools.appControl.RandomSource;
 import tools.drawing.PhysicalInfo;
 
 public class HeavytBody extends AgentsInteraction{

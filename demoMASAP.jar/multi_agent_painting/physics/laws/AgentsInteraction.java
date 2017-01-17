@@ -1,7 +1,6 @@
 package multi_agent_painting.physics.laws;
 
 import multi_agent_painting.mas.agents.AbstractAgent;
-import multi_agent_painting.mas.agents.Agent;
 import multi_agent_painting.mas.agents.PhysicalForces;
 import multi_agent_painting.mas.exceptions.AgentConfigurationError;
 import multi_agent_painting.mas.exceptions.AgentRuntimeException;

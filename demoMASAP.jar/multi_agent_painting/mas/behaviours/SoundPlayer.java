@@ -1,8 +1,6 @@
 package multi_agent_painting.mas.behaviours;
 
 
-import java.util.HashMap;
-
 import multi_agent_painting.mas.agents.AbstractAgent;
 import tools.drawing.PhysicalInfo;
 import multi_agent_painting.mas.agents.Agent;
