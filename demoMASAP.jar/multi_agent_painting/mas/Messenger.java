@@ -7,7 +7,7 @@ import multi_agent_painting.mas.agents.AbstractAgent;
 import tools.appControl.Logger;
 import multi_agent_painting.mas.agents.Agent;
 
-public class Messenger {
+public class Messenger implements Messengerable {
 
 	
 	private HashMap<Double, Double> map;
@@ -33,12 +33,13 @@ public class Messenger {
 			Logger.critical("## Messenger initialization failed");
 		}
 	}
-	
+
+	@Override
 	public boolean isReady(){
 		return this.ready;
 	}
 	
-	
+	@Override
 	public void sendValue(){
 		// For all agents in the map:
 		for(AbstractAgent a : agentsFrequencies.keySet()){
@@ -48,6 +49,7 @@ public class Messenger {
 		}		
 	}
 
+	@Override
 	public void setAgentsFrequency(HashMap<AbstractAgent, Double> agentsFrequency) {
 		this.agentsFrequencies = agentsFrequency;		
 	}

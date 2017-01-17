@@ -28,7 +28,7 @@ import tools.appControl.StoppableRunnable;
  * @author Sylvain Le Leuch, based on Ludovic Lefoulon draft version
  *
  */
-public class LineEntryPlayer extends Thread implements StoppableRunnable{
+public class LineEntryPlayer extends Thread implements StoppableRunnable, Listenable{
 
 	private volatile SoundThreadState threadState = SoundThreadState.PLAY;
 	private boolean shouldStop = false, ready;
@@ -88,6 +88,7 @@ public class LineEntryPlayer extends Thread implements StoppableRunnable{
 		shouldStop = true;
 	}
 
+	@Override
 	// initialization part
 	public void initSound(){
 		// Initiate the sound format
@@ -107,6 +108,7 @@ public class LineEntryPlayer extends Thread implements StoppableRunnable{
 		}
 	}
 
+	@Override
 	// Normally useless for our project, due to the fact that sound
 	// listened is inside the room
 	public void listenToSample() throws IOException{

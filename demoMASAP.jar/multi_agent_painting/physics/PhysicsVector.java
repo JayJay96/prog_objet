@@ -1,10 +1,11 @@
 package multi_agent_painting.physics;
 
 import java.awt.geom.Point2D;
+import java.util.Objects;
 
 import tools.drawing.Coordinates;
 
-public class PhysicsVector {
+public class PhysicsVector implements Vectorable {
 	public static final PhysicsVector	nullVector	= new PhysicsVector(0, 0);
 	public /*final*/ double					size;	//modification de ma part
 	private final Point2D				end;
@@ -24,7 +25,7 @@ public class PhysicsVector {
 		this.size = this.end.distance(0, 0);
 	}
 
-	
+	@Override
 	public final PhysicsVector add(final PhysicsVector otherVector) {
 		return new PhysicsVector(this.getXComponent()
 				+ otherVector.getXComponent(), this.getYComponent()
@@ -50,7 +51,8 @@ public class PhysicsVector {
 		this.end.setLocation(this.end.getX(),newY);
 		this.size = this.end.distance(0, 0);
 	}
-		
+
+	@Override
 	public PhysicsVector multiplyBy(final double... doubleArray) {
 		PhysicsVector result = this;
 		for (final double d : doubleArray) {
@@ -62,6 +64,7 @@ public class PhysicsVector {
 		return result;
 	}
 
+	@Override
 	public PhysicsVector substract(final PhysicsVector otherVector) {
 		return new PhysicsVector(this.getXComponent()
 				- otherVector.getXComponent(), this.getYComponent()

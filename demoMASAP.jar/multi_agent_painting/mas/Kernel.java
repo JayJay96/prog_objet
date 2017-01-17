@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
-import multi_agent_painting.applet.panes.drawingPane.Spinner;
 import multi_agent_painting.mas.agents.AbstractAgent;
 import multi_agent_painting.mas.agents.AgentFactory;
 import multi_agent_painting.mas.behaviours.Behaviours;
@@ -40,7 +39,6 @@ public class Kernel implements StoppableRunnable {
 	private final ArrayList<AbstractAgent>	agents			= new ArrayList<AbstractAgent>();
 	private Space					space;
 	private boolean					ready;
-	private Spinner					spinner;
 	private final LinkedList<AbstractAgent>	agentsToRemove	= new LinkedList<AbstractAgent>();
 
 	private String					lastCyclesNb	= " ";
@@ -164,9 +162,7 @@ public class Kernel implements StoppableRunnable {
 			try {
 				this.sched.schedule(new ArrayList<AbstractAgent>(this.agents));
 				this.space.nextStep();
-				if (this.spinner != null) {
-					this.spinner.rotate();
-				}
+
 				if (this.callNb % AgentsCollision.collisionsNbResetFreq == 0) {
 					AgentsCollision.collisionsSpawned = 0;
 				}
@@ -224,8 +220,7 @@ public class Kernel implements StoppableRunnable {
 	public void shutdown() {
 		if (!this.shutdown) {
 			this.shutdown = true;
-			// this.spinner.shutdown();
-			this.spinner = null;
+
 			for (final AbstractAgent agent : this.agents) {
 				try {
 					agent.die();
