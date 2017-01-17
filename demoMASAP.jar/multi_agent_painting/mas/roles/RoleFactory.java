@@ -17,6 +17,7 @@ public class RoleFactory {
     }
 
     public AbstractRole createRole(Class className) throws RoleInitException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        //Récupérer le constructeur de la classe et retourner une nouvelle instance. Ne sont pas afficher dans le diagramme uml
         return (AbstractRole) className.getConstructor().newInstance();
     }
 

@@ -186,78 +186,21 @@ public class DrawPanel extends JPanel {
 					try {
 						final AbstractAgent agent = this.space.getAgent(physicalInfo);
 						if(agent.getRoles().get(0).getName().equals("Musical") ){
-							try {
-								this.kernel.addMusicalAgent();
-							} catch (RoleInitException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (AgentInitException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (AgentConfigurationError e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (NoSuchMethodException e) {
-								e.printStackTrace();
-							} catch (InstantiationException e) {
-								e.printStackTrace();
-							} catch (IllegalAccessException e) {
-								e.printStackTrace();
-							} catch (InvocationTargetException e) {
-								e.printStackTrace();
-							}
+							this.kernel.addMusicalAgent();
 						}
 						if(agent.getRoles().get(0).getName().equals("Eater") ){
-							try {
-								this.kernel.addEaterAgent();
-							} catch (RoleInitException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (AgentInitException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (AgentConfigurationError e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (NoSuchMethodException e) {
-								e.printStackTrace();
-							} catch (InstantiationException e) {
-								e.printStackTrace();
-							} catch (IllegalAccessException e) {
-								e.printStackTrace();
-							} catch (InvocationTargetException e) {
-								e.printStackTrace();
-							}
+							this.kernel.addEaterAgent();
 						}
 						if(agent.getRoles().get(0).getName().equals("Painter") ){
-							try {
-								this.kernel.addPainterAgent();
-							} catch (RoleInitException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (AgentInitException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (AgentConfigurationError e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							} catch (NoSuchMethodException e) {
-								e.printStackTrace();
-							} catch (InstantiationException e) {
-								e.printStackTrace();
-							} catch (IllegalAccessException e) {
-								e.printStackTrace();
-							} catch (InvocationTargetException e) {
-								e.printStackTrace();
-							}
+							this.kernel.addPainterAgent();
 						}
 						agent.die();
-					} catch (final MasException e) {
+					}  catch (Exception e){
 						e.printStackTrace();
 					}
 				}
 			} catch (final NullPointerException e) {
-				// TODO: We don't have that agent's position yet
+				e.printStackTrace();
 			}
 		}
 		this.agentsNb = agents.length;

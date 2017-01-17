@@ -9,7 +9,6 @@ import java.util.ArrayList;
  * Created by Epulapp on 12/01/2017.
  */
 public interface Rolable {
-    public String getName();
 
     public ArrayList<Behaviours> getBehaviours();
 

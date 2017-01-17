@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/out/test/demoMASAP"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="commons-math-1.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/commons-math-1.2.jar!/"/>
+	</lib>
+	<lib name="jl1.0.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/jl1.0.jar!/"/>
+	</lib>
+	<lib name="tritonus_share.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/tritonus_share.jar!/"/>
+	</lib>
+	<lib name="mp3spi1.9.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/mp3spi1.9.2.jar!/"/>
+	</lib>
+</component>

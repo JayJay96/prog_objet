@@ -48,4 +48,6 @@ public abstract class AbstractAgent implements AgentWorkable{
         this.musicalValue = 0.0;
         Logger.info("New agent " + this.index);
     }
+
+    public void setMusicalValue(Double value){musicalValue = value;}
 }

@@ -9,13 +9,13 @@ import multi_agent_painting.physics.PhysicsVector;
 import multi_agent_painting.physics.Space;
 import tools.drawing.PhysicalInfo;
 
-public class speedDown extends AgentsInteraction {
+public class SpeedDown extends AgentsInteraction {
 
 	private final double	dodgeDistance;
 	private final double	dodgeFactor=10;
 	private final double	troubleDistance;
 
-	public speedDown(final MASConfiguration config) {
+	public SpeedDown(final MASConfiguration config) {
 		super(PhysicProperty.PARITY);
 		this.dodgeDistance = config.collisionDistance*dodgeFactor;
 		this.troubleDistance=dodgeFactor*dodgeDistance*10;

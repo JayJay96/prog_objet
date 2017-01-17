@@ -31,7 +31,5 @@ public interface AgentWorkable {
 
     public ArrayList<AbstractRole> getRoles();
 
-    public void setMusicalValue(Double value);
-
     public ArrayList<Double> getMusicalValues();
 }

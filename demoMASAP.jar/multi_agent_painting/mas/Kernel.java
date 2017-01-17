@@ -9,8 +9,6 @@ import java.util.NoSuchElementException;
 
 import multi_agent_painting.mas.agents.AbstractAgent;
 import multi_agent_painting.mas.agents.AgentFactory;
-import multi_agent_painting.mas.behaviours.Behaviours;
-import multi_agent_painting.mas.behaviours.lib.InteractBehaviour;
 import multi_agent_painting.mas.exceptions.AgentConfigurationError;
 import multi_agent_painting.mas.exceptions.AgentInitException;
 import multi_agent_painting.mas.exceptions.AgentRuntimeException;
@@ -21,11 +19,6 @@ import multi_agent_painting.mas.exceptions.RoleInitException;
 import multi_agent_painting.mas.roles.*;
 import multi_agent_painting.physics.Space;
 import multi_agent_painting.physics.laws.AgentsCollision;
-import multi_agent_painting.physics.laws.AgentsDodge;
-import multi_agent_painting.physics.laws.Gravity;
-import multi_agent_painting.physics.laws.ListenToMusic;
-import multi_agent_painting.physics.laws.Radiation;
-import multi_agent_painting.physics.laws.speedDown;
 import tools.appControl.Logger;
 import tools.appControl.StoppableRunnable;
 

@@ -7,8 +7,7 @@ import multi_agent_painting.applet.panes.drawingPane.DrawPanel;
 import multi_agent_painting.mas.agents.AbstractAgent;
 import multi_agent_painting.mas.agents.AgentFactory;
 import multi_agent_painting.mas.behaviours.Behaviours;
-import multi_agent_painting.mas.behaviours.SoundPlayer;
-import multi_agent_painting.mas.behaviours.lib.InteractBehaviour;
+import multi_agent_painting.mas.behaviours.lib.BehavioursFactory;
 import multi_agent_painting.mas.exceptions.AgentConfigurationError;
 import multi_agent_painting.mas.exceptions.AgentInitException;
 import multi_agent_painting.mas.exceptions.MasInitException;
@@ -17,16 +16,7 @@ import multi_agent_painting.mas.roles.*;
 import multi_agent_painting.mas.sound.FilePlayer;
 import multi_agent_painting.mas.sound.LineEntryPlayer;
 import multi_agent_painting.physics.Space;
-import multi_agent_painting.physics.laws.AgentsCollision;
-import multi_agent_painting.physics.laws.AgentsDodge;
-import multi_agent_painting.physics.laws.DodgePainter;
-import multi_agent_painting.physics.laws.Drag;
-import multi_agent_painting.physics.laws.Gravity;
-import multi_agent_painting.physics.laws.HeavytBody;
-import multi_agent_painting.physics.laws.HotBody;
-import multi_agent_painting.physics.laws.ListenToMusic;
-import multi_agent_painting.physics.laws.Radiation;
-import multi_agent_painting.physics.laws.speedDown;
+import multi_agent_painting.physics.laws.*;
 import tools.appControl.Logger;
 
 public class Mas {
@@ -57,27 +47,34 @@ public class Mas {
 			listOfFrequency[i] = (i*44100.0/4096);
 		}
 		
-		final Behaviours bGravitation = new InteractBehaviour(new Gravity(
-				Mas.config));
+		final Behaviours bGravitation = BehavioursFactory.getInstance().createBehaviours(
+				AgentsInteractionFactory.getInstance().createAgentInteraction("Gravity",Mas.config));
 
-		final Behaviours bRadiation = new InteractBehaviour(new Radiation(
-				Mas.config));
+		final Behaviours bRadiation = BehavioursFactory.getInstance().createBehaviours(
+				AgentsInteractionFactory.getInstance().createAgentInteraction("Radiation", Mas.config));
 
-		final Behaviours bCollision = new InteractBehaviour(
-				new AgentsCollision(Mas.config));
-		final Behaviours bdodge = new InteractBehaviour(
-				new AgentsDodge(Mas.config));
-		final Behaviours bdodgePainter = new InteractBehaviour(
-				new DodgePainter(Mas.config));
-		final Behaviours bListen = new InteractBehaviour(
-				new ListenToMusic(Mas.config));
-		final Behaviours bhot = new InteractBehaviour(
-				new HotBody(Mas.config));
-		final Behaviours bheavy = new InteractBehaviour(
-						new HeavytBody(Mas.config));
-		final Behaviours bspeed = new InteractBehaviour(
-				new speedDown(Mas.config));
-		final Behaviours sPlayer = new SoundPlayer();
+		final Behaviours bCollision = BehavioursFactory.getInstance().createBehaviours(
+				AgentsInteractionFactory.getInstance().createAgentInteraction("AgentsCollision", Mas.config));
+
+		final Behaviours bdodge = BehavioursFactory.getInstance().createBehaviours(
+				AgentsInteractionFactory.getInstance().createAgentInteraction("AgentsDodge",Mas.config));
+
+		final Behaviours bdodgePainter = BehavioursFactory.getInstance().createBehaviours(
+				AgentsInteractionFactory.getInstance().createAgentInteraction("DodgePainter",Mas.config));
+
+		final Behaviours bListen = BehavioursFactory.getInstance().createBehaviours(
+				AgentsInteractionFactory.getInstance().createAgentInteraction("ListenToMusic",Mas.config));
+
+		final Behaviours bhot = BehavioursFactory.getInstance().createBehaviours(
+				AgentsInteractionFactory.getInstance().createAgentInteraction("HotBody",Mas.config));
+
+		final Behaviours bheavy = BehavioursFactory.getInstance().createBehaviours(
+				AgentsInteractionFactory.getInstance().createAgentInteraction("HeavytBody",Mas.config));
+
+		final Behaviours bspeed = BehavioursFactory.getInstance().createBehaviours(
+				AgentsInteractionFactory.getInstance().createAgentInteraction("SpeedDown",Mas.config));
+
+		final Behaviours sPlayer = BehavioursFactory.getInstance().createBehaviours(null);
 
 		/**
 		 *  Definition of the "Painter" role
@@ -186,8 +183,8 @@ public class Mas {
 			final double temp,
 			final Behaviours bCollision, double mass) throws RoleInitException,
 			AgentInitException, AgentConfigurationError, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-		Behaviours hotRadiation = new InteractBehaviour(new Radiation(temp));
-		Behaviours heavy = new InteractBehaviour(new Gravity(config, mass));
+		Behaviours hotRadiation = BehavioursFactory.getInstance().createBehaviours(new Radiation(temp));
+		Behaviours heavy = BehavioursFactory.getInstance().createBehaviours(new Gravity(config, mass));
 		
 		if(heavyHotBodyRole == null){
 			heavyHotBodyRole = RoleFactory.getInstance().createRole(HeavyHotBodyRole.class);

@@ -56,8 +56,6 @@ public abstract class AbstractRole implements Rolable{
 		this.enabledBehaviours = new ArrayList<Behaviours>();
 	}
 
-
-
 	public String getName(){
 		return this.name;
 	}
